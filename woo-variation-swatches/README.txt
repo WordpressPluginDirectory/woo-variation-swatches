@@ -5,8 +5,8 @@ Requires PHP: 7.4
 Requires at least: 5.6
 Tested up to: 6.4
 WC requires at least: 5.6
-WC tested up to: 8.3
-Stable tag: 2.0.29
+WC tested up to: 8.4
+Stable tag: 2.0.30
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -613,6 +613,10 @@ And your are ready to go.
 12. Global Variation Color Swatches Attribute List Preview
 
 == Changelog ==
+
+= 2.0.30 - 15-01-2023 =
+
+* Update: WooCommerce 8.4+ Compatibility.
 
 = 2.0.29 - 21-11-2023 =
 
