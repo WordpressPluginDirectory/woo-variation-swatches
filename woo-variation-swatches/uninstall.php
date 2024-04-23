@@ -4,7 +4,7 @@
  */
 
 // If uninstall not called from WordPress exit
-defined( 'WP_UNINSTALL_PLUGIN' ) or die( 'Keep Silent' );
+defined( 'WP_UNINSTALL_PLUGIN' ) || die( 'Keep Silent' );
 
 global $wpdb;
 

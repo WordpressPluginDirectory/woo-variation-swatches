@@ -65,8 +65,11 @@ if ( ! class_exists( 'GetWooPlugins_Plugin_Deactivate_Feedback', false ) ) :
 		}
 
 		public function dialog() {
+            
+            $screen    = get_current_screen();
+            $screen_id = $screen ? $screen->id : '';
 
-			if ( in_array( get_current_screen()->id, array( 'plugins', 'plugins-network' ), true ) ) {
+			if ( in_array( $screen_id, array( 'plugins', 'plugins-network' ), true ) ) {
 
 				$deactivate_reasons = $this->reasons();
 				$slug               = $this->slug();
