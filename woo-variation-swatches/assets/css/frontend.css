@@ -2,7 +2,7 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 8/29/2024, 6:38:28 PM
+ * Date: 11/11/2025, 3:19:45 PM
  * Released under the GPLv3 license.
  */
 .woo-variation-swatches.wvs-tooltip {
@@ -788,10 +788,10 @@
   color: var(--wvs-selected-item-text-color, #000000);
 }
 .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled:hover {
-  pointer-events: none;
+  /*pointer-events: none;
   cursor: not-allowed;
+  overflow: hidden;*/
   position: relative;
-  overflow: hidden;
 }
 .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled img, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled span, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled .variable-item-contents, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled:hover img, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled:hover span, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled:hover .variable-item-contents {
   opacity: 0.6;
@@ -928,6 +928,9 @@
   pointer-events: none;
   opacity: 0.3;
 }
+.woo-variation-swatches.wvs-behavior-hide .variable-items-wrapper .variable-item.disabled.radio-variable-item {
+  width: auto !important;
+}
 .woo-variation-swatches.wvs-behavior-hide .variable-items-wrapper .variable-item.disabled {
   opacity: 0;
   visibility: hidden;
@@ -944,9 +947,6 @@
   margin: 0 !important;
   min-width: 0 !important;
   min-height: 0 !important;
-}
-.woo-variation-swatches.wvs-behavior-hide .variable-items-wrapper .variable-item.disabled.radio-variable-item {
-  width: auto !important;
 }
 .woo-variation-swatches.wvs-behavior-hide .variable-items-wrapper .variable-item.no-stock .variable-item-contents::before {
   background-image: none;

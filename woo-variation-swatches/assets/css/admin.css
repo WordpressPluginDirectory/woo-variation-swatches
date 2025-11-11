@@ -2,7 +2,7 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 8/29/2024, 6:38:28 PM
+ * Date: 11/11/2025, 3:19:45 PM
  * Released under the GPLv3 license.
  */
 .button.button-danger {
@@ -231,16 +231,6 @@ table.wp-list-table span.wvs-info::before {
   content: "\f307";
 }
 
-.woo-variation-swatches-variation-product-options-wrapper {
-  /*.woo-variation-swatches-settings-heading {
-    font-weight: 600 !important;
-    color: #252a2e;
-    font-size: 14px;
-    !*border-top: 1px solid #c3c4c7;
-    border-bottom: 1px solid #c3c4c7;*!
-    padding: 15px 10px !important;
-  }*/
-}
 .woo-variation-swatches-variation-product-options-wrapper .woocommerce-message {
   margin: 10px;
 }
@@ -269,6 +259,16 @@ table.wp-list-table span.wvs-info::before {
 }
 .woo-variation-swatches-variation-product-options-wrapper .product-label-settings {
   background-color: #fff;
+}
+.woo-variation-swatches-variation-product-options-wrapper {
+  /*.woo-variation-swatches-settings-heading {
+    font-weight: 600 !important;
+    color: #252a2e;
+    font-size: 14px;
+    !*border-top: 1px solid #c3c4c7;
+    border-bottom: 1px solid #c3c4c7;*!
+    padding: 15px 10px !important;
+  }*/
 }
 .woo-variation-swatches-variation-product-options-wrapper .form-settings-group {
   padding: 5px;

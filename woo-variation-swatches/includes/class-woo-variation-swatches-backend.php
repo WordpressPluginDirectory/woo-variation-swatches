@@ -189,6 +189,8 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Backend' ) ) {
 		}
 
 		public function admin_scripts() {
+
+
 			$suffix    = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
@@ -196,9 +198,12 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Backend' ) ) {
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_style( 'woo-variation-swatches-admin', woo_variation_swatches()->assets_url( "/css/admin{$suffix}.css" ), array(), woo_variation_swatches()->assets_version( "/css/admin{$suffix}.css" ) );
 
-			if ( in_array( $screen_id, array( 'product' ), true ) ) {
-				wp_deregister_script( 'serializejson' );
-				wp_register_script( 'serializejson', woo_variation_swatches()->assets_url( "/js/jquery.serializejson{$suffix}.js" ), array( 'jquery' ), '3.2.1', true );
+			$prefix_wc_handle = version_compare(WC()->version, '10.3', '>=') ? 'wc-':'';
+			$serializejson_handle = sprintf( '%sserializejson', $prefix_wc_handle);
+
+			if ( 'product' === $screen_id ) {
+				wp_deregister_script( $serializejson_handle );
+				wp_register_script( $serializejson_handle, woo_variation_swatches()->assets_url( "/js/jquery.serializejson{$suffix}.js" ), array( 'jquery' ), '3.2.1', true );
 			}
 
 
@@ -213,7 +218,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Backend' ) ) {
 				'jquery',
 				'wp-color-picker-alpha',
 				'wc-enhanced-select',
-				'serializejson',
+				$serializejson_handle,
 			), woo_variation_swatches()->assets_version( "/js/admin{$suffix}.js" ), true );
 
 
@@ -327,11 +332,6 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Backend' ) ) {
 			}
 
 			foreach ( $taxonomy_attributes as $attribute ) {
-
-				// Skip taxonomy attributes that didn't match the query.
-				/*if ( false === stripos( $attribute->attribute_name, $attribute_name ) ) {
-					continue;
-				}*/
 
 				if ( $attribute->attribute_name !== $attribute_name ) {
 					continue;

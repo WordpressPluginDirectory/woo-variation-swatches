@@ -100,7 +100,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Menus', false ) ) :
 
 				wp_enqueue_style( 'getwooplugins_settings', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/css/getwooplugins-settings.css', array(), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'css/getwooplugins-settings.css' ) );
 
-				wp_enqueue_script( 'jquery-tiptip', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/jquery.tipTip.js', array( 'jquery' ), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/jquery.tipTip.js' ), true );
+				wp_enqueue_script( 'gwp-jquery-tiptip', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/jquery.tipTip.js', array( 'jquery' ), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/jquery.tipTip.js' ), true );
 
 				wp_enqueue_script( 'gwp-form-field-dependency', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/getwooplugins-form-field-dependency.js', array( 'jquery' ), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/getwooplugins-form-field-dependency.js' ), true );
 
@@ -115,7 +115,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Menus', false ) ) :
 					'underscore',
 					'backbone',
 					'wp-util',
-					'jquery-tiptip',
+					'gwp-jquery-tiptip',
 					'iris'
 				);
 
