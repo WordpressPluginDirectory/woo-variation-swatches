@@ -1,602 +1,336 @@
 === Variation Swatches for WooCommerce ===
 Contributors: EmranAhmed, getwooplugins, storepress
-Tags: woocommerce variation swatches, woocommerce variation, woocommerce, variation swatches, woocommerce attributes, product attributes, product color, product size, variable product attributes, variation product swatches, color variation swatch, image variation swatch, printful color swatches
+Tags: variation swatches, woocommerce variation swatches, woocommerce attributes swatches, variation swatches for woocommerce, woocommerce color image button swatches
 Requires PHP: 7.4
 Requires at least: 6.4
-Tested up to: 6.8
+Tested up to: 7.1
 WC requires at least: 8.0
-WC tested up to: 10.3
-Stable tag: 2.2.2
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+WC tested up to: 11.1
+Stable tag: 2.5.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Beautiful Color, Image and Buttons Variation Swatches For WooCommerce Product Attributes 
+Turn dropdowns into color, image, and button swatches for WooCommerce Variable Products. No coding needed.
 
 == Description ==
 
-=== How To Install Product Variation Swatches Plugin for WooCommerce Variable Products ===
+**Smart and Easy Way to Display Product Variations in WooCommerce**
+
+Variation Swatches for WooCommerce replaces WooCommerce's default variation dropdowns with interactive color, image, and button/label swatches, giving customers a more visual and engaging way to choose product variations. Trusted by 300,000+ active stores and downloaded more than 9.4 million times, the plugin has earned a 4.8 out of 5 rating from 850+ reviews-making it the leading and most trusted plugin in the WooCommerce swatches category.
 
 [youtube https://www.youtube.com/watch?v=4uIZjvWiSf0]
 
-WooCommerce Variation Swatches makes selecting product options easier and more enjoyable. Say goodbye to dull dropdown menus—your customers can now choose sizes, colors, styles, and more using vibrant swatches, images, and labels.
+**Make Product Variations Easier to See and Select**
 
-This transformation turns the shopping experience into something fun and visually appealing while efficiently supporting popular WordPress themes. Plus, it seamlessly integrates with product quick views, allows you to customize shapes into <strong>round or square</strong>, and even enables you to disable the plugin’s CSS to tailor it to your theme’s stylesheet.
+WooCommerce’s default variation dropdowns provide a basic, text-based way to display product variations, making it harder for customers to quickly understand and compare what’s available. Variation Swatches for WooCommerce transforms these traditional dropdowns into interactive color, image, and button swatches, giving customers a smarter and more engaging way to explore available variations.
 
-The best part? WooCommerce Variation Swatches automatically convert all variation select dropdowns into buttons right after installation—only a quick two-step configuration is needed for color and image swatches.
+Customers can instantly explore and select colors, sizes, styles, and other product options without opening multiple dropdowns one by one. This makes the selection process faster, more engaging, and easier to understand.
 
+By turning variation selection into a visual experience, the plugin keeps product pages clean and easy to navigate while helping customers find and choose the right product variation with greater confidence.
 
-## Key Feature Comes with Variation Swatches For WooCommerce Plugin ##
-
-👉 Auto Convert All Variation Dropdowns to Button Swatch by Default
-
-  You can easily convert the variation select options from drop-down to buttons just by installing this WooCommerce Variation Swatches plugin. It will automatically convert your product variation select dropdowns to button swatches once the plugin is installed. 
-
-  [Live Demo & Documentation](http://j.mp/automatic-button-swatches-readme)
+[Live Demo | Documentation](http://j.mp/automatic-button-swatches-readme)
 <hr />
 
-👉 Enable Color Swatches For Variable Product Attribute Variations
+= How Does It Work? =
 
-For selling variable products, adding color variations is one of the best ways to bring more life into eCommerce stores. When you enable Color Swatches instead of traditional variation dropdown, you are making your customers easier to choose their desired products. 
+1. Install and activate the plugin. Dropdowns convert to button swatches automatically.
+2. Go to **Products > Attributes** and change an attribute's type to **Color**, **Image**, or **Button/Label**.
+3. Edit the attribute's terms and set a color, image, or label for each one.
+4. Save. The dropdown on your product page is now a swatch.
 
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-color-swatches-readme)
-<hr />
-👉 Enable Image Swatches For Variable Product Attribute Variations
+== Key Features ==
 
-Image swatches will provide a pleasant way to display variations of a product.This Image Variation Swatches plugin helps to display product variations easier and more stylishly. 
+**Color, Image & Button/Label Swatches for Product Attributes**
+WooCommerce's default dropdown shows every variation as plain text, whether it's a color, a style, or a size. This feature replaces that dropdown with an actual color swatch, a small image, or a clickable button, matched to whichever attribute type you choose. 
 
- [Live Demo & Documentation](http://bit.ly/3rd-image-demo-swatches-readme)
- <hr />
-👉 Enable Label/Text/Button Swatches For Variable Product Attribute Variations 
+Customers can choose their desired variations instead of reading and guessing what a label means. You can mix swatch types across different attributes on the same product - color as swatches, size as buttons, for example.
 
-For showing available product variation-related details (such as colors and sizes), label/text/button variation swatches extensively boost conversion. It is one of the most effective ways to make all the available options visible for products.
-
-  [Live Demo & Documentation](http://bit.ly/3rd-label-demo-readme)
+[Live Demo | Documentation](https://demo.getwooplugins.com/woocommerce-variation-swatches/product-details/color-variation-swatches/)
 <hr />
 
-👉 Convert Globally Created Attribute Variations Into Color, Image, and Label Swatches
+**Auto Convert Dropdown Into Image Swatches If Variation Has a Featured Image Set**
+If a variation already has its own featured image uploaded in WooCommerce, this feature uses that image directly as the swatch, without any extra setup. It's useful for stores where every color or style variation already has its own product photo. 
 
-Globally created product attributes are used for many different products. With these Variation Swatches for WooCommerce plugin, you can globally create attributes into color, image, and label swatches. So, you don’t need to get inside each product of your store and enable variation swatches for them separately. 
+This saves the step of manually assigning a swatch image to each attribute term. The swatch stays in sync automatically if the variation's featured image is updated later.
 
-  [Video Tutorial & Preview](http://bit.ly/label-swatch-free-read-youtube)
-<hr />
-👉 Option to Globally Select ROUNDED Attribute Variation Swatches Shape.
-
-The round shape is one of the unique and helpful features of this swatches plugin. You could grab the attention of buyers by using rounded attribute swatches. The feature helps convert potential buyers into sales.
-
-  [Live Demo & Documentation](http://bit.ly/3rd-round-shape-readme) 
-<hr />
-👉 Option to Globally Select SQUARED Attribute Variation Swatches Shape.
-
-There are many scenarios where you need to show more than two or three characters in swatches or add color and image swatch exclusively. Instead of Round, using a Squared shape is the best practice in such situations.
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-square-readme) 
-<hr />
-👉 Show Cross Sign For Out of Stock Variation Swatches (Up To 30 Variations)
-
-By default, WooCommerce doesn't cross out any variations that are out of stock. However,this plugin would help if you avoided user frustration by never letting them pick any variation product they can't purchase.
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-cross-out-of-stock-readme)
-<hr />
-👉 Blur For Out of Stock Variation Swatches (Up To 30 Variations)
-
-WooCommerce allows users to select the variation first, then let them know it's out of stock. But, that's time-consuming.  When you use this swatches plugin, you can make blur for out-of-stock variation swatches up to 30 variations.
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-blur-readme)
-<hr />
-👉 Hide For Out of Stock Variation Swatches (Up To 30 Variations)
-
-Showing out-of-stock variation seems unnecessary. So most of the store owners want to hide out-of-stock variation products. This swatches plugin is helpful, as it has the option to hide out-of-stock variation swatches products. 
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-hide-out-stock-readme) 
-<hr />
-👉 Product Page Swatches Size Control
-
-The Variation Swatches plugin has the option to control the size of the product page swatches. It will help you to present product variants more engagingly and appealingly. 
-
- [Live Demo & Documentation](http://bit.ly/3rd-demo-size-control-readme) 
-<hr />
-👉 Show Selected Variation Name Beside Label
-
-This Variable Swatches plugin can show selected single color, image, and button attribute swatches name beside the label. Displaying selected variation names beside labels will help users to know about the product in a better way.
-
- [Live Demo & Documentation](http://bit.ly/show-selected-variation-name-beside-label) 
-<hr />
-👉 Flexible Swatches Tooltip Insert and Display settings 
-
-The plugin has awesome tooltip features. You can show extra information about the swatches. It helps the users to understand about the variation a more elaborately. Consequently, it helps to boost sales and conversion exponentially. 
-
- [Live Demo & Documentation](https://bit.ly/tooltip-swatches-disable)  
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#enable-auto-image-swatches-without-any-configuration)
 <hr />
 
-👉 Convert Buttons Swatches to Dropdown (If It's needed)
+**Auto Color Name Matching**
+Instead of opening a colorpicker and guessing a hex code, you can type a color's name - like "Forest Green" or "Sky Blue" - and the plugin looks up a matching shade for you. This is powered by the StorePress Colors API; see "External services" below for exactly what is and isn't sent. 
 
-If you want to convert variation select dropdown into buttons. You don’t need to configure anything. Just you install the plugin, and you can notice variation select dropdown is converted to buttons. You can disable this feature on your requirement when you need. 
+It speeds up setup for stores with many color terms to configure. You can still fine-tune the exact shade afterward if the automatic match isn't quite right.
 
-  [Live Demo & Documentation](http://j.mp/button-to-dropdown-readme)
-<hr />
-👉 Compatible With Elementor Page Builder Plugin
-
-Elementor works well with all the themes and plugins which respect the coding. The WooCommerce Variation Swatches plugin is compatible with the Elementor page builder plugin.
-
-[Video Demo & Documentation](http://j.mp/elementor-swatches)
-<hr />
-👉 Compatible With Printful WooCommerce Plugin 
-
-The Variation Swatches plugin is compatible with the Printful WooCommerce plugin. You can enable color swatches with Printful Technology when customizing your shop.
-
-[Video Demo & Documentation](http://j.mp/printful-swatches)
-<hr />
-👉 Compatible With Dokan MultiVendor WooCommerce Plugin 
-
-Dokan Multivendor WooCommerce plugin and its functionalities are compatible with beautiful color, image, and button Variation Swatches for WooCommerce Product Attributes.
-
-[Video Demo & Documentation](http://j.mp/swatches-dokan)
-<hr />
-👉 Compatible With AliDropship WooCommerce Plugin 
-[Video Demo & Documentation](http://j.mp/swatches-alidropship)
-<hr />
-👉 Reorder Product Attribute Variation Swatches
-
-The Attribute Variation Swatches plugin expands your possibilities for displaying variation swatches options. You can reorder product attribute variation swatches with ease. 
-
-👉 Work on Variable Product Quick View Popup   
-
-With the help of the WooCommerce Attribute Swatches plugin, you can show swatches on the product details page and archive page. In addition, you can provide shoppers with a “quick view” of the product.
-
-👉 Compatible with popular WooCommerce Themes 
-
-It is the only Variation Swatches plugin in the market that runs over 200K WooCommerce stores .The plugin is compatible with major themes in the market, including OceanWP, Flatsome, Divi and many more.
-
-👉 Frequently Updated And Secured Codebase 
-
-Our plugins are frequently updated with new features. We try our best to ensure that our plugin runs correctly on your site and keeps your site functional and secure. 
-
-👉 Option to disable default plugin stylesheet for theme developer
-
-Some plugins have styles that are not that easy to override. However, we provide the option to disable our default plugin's stylesheet and use your own stylesheet instead. 
-
-👉 Compatible With Popular WooCommerce Plugins
-
-There are many other useful plugins that serve different purposes, and many users will install at least a few. Our Variation Swatches plugin is compatible with the most popular WooCommerce plugins. 
-
-## 🏆 Users' Feedback For Variation Swatches For WooCommerce ##
-
-[Tim Cumming, Founder at DevisionUK](https://wordpress.org/support/topic/outstanding-support-118): 
-> 'Really can’t rate this developer high enough!'
-
->Not only is the plugin super cool but their support, is utterly mind-blowing! I had reason to ask a question and, without hesitation, Ahmed logged into our site, had a look around and responded with a solution, all within the space of 5 minutes!!
-
->It you’re looking for a great product with superlative support then look no further!'
-
-[Ruben Zuidervaart](https://wordpress.org/support/topic/does-what-it-should-with-no-issues/): 
-> 'It just works, and the support is also pretty damn good for something that they offer for free.'
-
-> 'Leaving a 5/5 is the least I could do 🙂'
-
-[cl4udio](https://wordpress.org/support/topic/good-support-278/): 
-> 'I like this plugin! Works great and the customer support is the best. Love it!'
-
-
-##  PREMIUM FEATURES OF VARIATION SWATCHES FOR WOOCOMMERCE ##
-
-[Live Demo](http://bit.ly/3rd-main-demo-readme) | [Upgrade to PRO](http://bit.ly/upgrade-to-pro-readme) | [Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/?utm_source=wordpress.org&utm_medium=README&utm_campaign=woo-variation-swatches) | [Support](https://getwooplugins.com/tickets/?utm_source=wordpress.org&utm_medium=README&utm_campaign=woo-variation-swatches)
-
-=== How To Create Product Variation Swatches From Custom Product Level Attribute ===
-
-[youtube https://www.youtube.com/watch?v=Ny9QBY_x9cA&t]
-
-=== How To Show WooCommerce Variation Swatches on Shop Page ===
-
-[youtube https://www.youtube.com/watch?v=1IhEZiGzJHs]
-
-Besides adding swatches on the product page, you can show [WooCommerce variation swatches on shop page](https://getwooplugins.com/plugins/woocommerce-variation-swatches/)
-
-👉 Auto Convert All Dropdowns to Image Swatch If Variation Has a Featured Image Set
-
-If you have already set featured images for variations, then it will automatically convert all dropdowns to image swatch. That means you don’t need the hassle to do it manually which in return will save your valuable time. 
-
-   [Live Demo & Documentation](http://j.mp/auto-image-swatches-insideplugin)
-<hr />
-👉 Multi Color Variation Swatches
-
-Multi Color Variation Swatches allow you to insert dual color for a single variation product. The plugin is going to be handy in such situations where you have product variations in two colors.
-
-  [Live Demo & Documentation](http://j.mp/dual-color-doc-inside-plugin)
-<hr />
-👉 Show Entire Color, Image, Label And Radio Attributes Swatches In Catalog/ Category / Archive / Store/  Shop Pages
-
-Your variable product may have plenty of attributes. This Attribute Swatches plugin is very helpful for showing distinct color, image or label attribute swatches in catalog, category, archive or shop pages.  
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-acrhive-page-readme)
-<hr />
-👉 Show Selected Single Color or Image Or Label Attribute Swatches In Catalog/ Category / Archive / Store / Shop Pages
-
-With the help of WooCommerce Variation Swatches plugin, you can show select attributes on archive page. So, don't worry if you have too many variations on the product page. 
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-catalog-mode)
-<hr />
-👉 Convert attribute variations into radio button
-
-The radio button is a quicker way for the user to scan all the available options. That’s definitely a better choice for selecting from all the variation products. The plugin has the feature to convert product attribute variations into radio buttons. 
-
-[Live Demo & Documentation](http://bit.ly/3rd-demo-radio-readme)
-<hr />
-👉 Product Basis Attribute Swatches Type Change
-
-This is another effective feature of the WooCommerce Variation Swatches plugin. For example, if you decide to change the swatch type of color attribute into an image, you can do it easily with this Attribute Swatches plugin.   
-
-[Live Demo & Documentation](http://bit.ly/3rd-demo-product-basis-product-type-change-readme)
-<hr />
-👉 Show All Color, Image & Button Swatches Type In the Same Attribute
-
-You can choose your desired attribute swatches type in the same attribute from the drop-down menu. This Attribute Swatches plugin allows you to show any swatch attribute type, such as, color, image, or button in the same attribute list instead of dropdown. 
-
-[Live Demo & Documentation](http://bit.ly/3rd-readme-demo-show-all-variation-type-in-the-same-variation)
-<hr />
-👉 Insert New Image Replacing Globally Added Image For Image Variation Swatches In Each Product
-
-WooCommerce Variation Swatch plugin offers global swatches.
-It has the feature to insert a new image by replacing your globally added image. That means, you can replace your globally added images for variation swatches in each product. 
-
-[Live Demo & Documentation](http://bit.ly/3rd-demo-product-basis-image-change-readme)
-<hr />
-👉 Insert New Color Replacing Globally Added Color In Color Variation Swatches For Each Product
-
-The Variation Swatches plugin also allows you to change your globally added color. You can insert new color replacing globally added color in color variation swatches for each product. 
-
-[Live Demo & Documentation](http://bit.ly/3rd-demo-product-basis-color-change-readme)
-<hr />
-👉 Convert Manually Created Attribute Variations Into Color, Image, and Label Swatches
-
-WooCommerce by default has the option to show manually created attribute variations. However, the Attribute Variation Swatches plugin helps to convert manually created attribute variations into beautiful swatches like color, image and label swatches.
-
-  [Live Demo & Documentation](http://bit.ly/manual-attribute-readme-video)
-<hr />
-👉 Change Variation Product Gallery After Selecting Single Attribute Like Amazon Or AliExpress
-
-The shoppers don’t need to match the entire attribute variation when this WooCommerce Swatches plugin is used. Like Amazon or AliExpress, variation products gallery will be changed after selecting a single attribute. 
-
-  [Live Demo & Documentation](http://bit.ly/3rd-readme-demo-amazon)
-<hr />
-👉 Generate Selected Attribute Variation Link 
-
-This feature is useful when you want to send any specific link for variation products. Your customers may ask you to send them a direct link to a specific variation product link. It will help in making a quick purchase and save their valuable time. 
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-generate-link-readme)
-<hr />
-👉 Option to Select ROUNDED and SQUARED Attribute Variation Swatches Shape In the Same Product.
-
-In the WooCommerce Variation Swatches plugin,there are options for styling swatches, such as rounded and squared attribute swatches shape. The round and square shapes are one of the unique features of this plugin. 
-
-  [Live Demo & Documentation](http://bit.ly/3rd-readme-demo-round-square)
-<hr />
-👉 Show Cross Sign For Out of Stock Variation Swatches (Unlimited Variations Without hiding out of stock item from catalog)
-
-The free version of those Swatches plugin enables you to show cross signs up to 30 variations that are currently out of stock. However, the advanced version will allow to show cross signs for unlimited variations.
-
-  [Live Demo & Documentation](http://bit.ly/3rd-readme-demo-cross-out-of-stock-variations-more-than-30-variations)
-<hr />
-👉 Blur Out of Stock Variation Swatches (Unlimited Variations Without hiding out of stock item from catalog)
-
-The advanced version of the WooCommerce Variation Swatches plugin is useful for displaying out of stock variation swatches as blur. You can show unlimited variations without hiding stock items from the catalog.
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-blur-out-of-stock-variations-more-than-30-variations)
-<hr />
-👉 Hide Out of Stock Variation Swatches (Unlimited Variations Without hiding out of stock item from catalog)
-
-Default WooCommerce settings will hide out-of-stock items everywhere on your online store. But, this WooCommerce Swatches plugin enables you to hide out of stock for unlimited variation products without hiding from the catalog. 
-
-  [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-hide-out-of-stock-variations-more-than-30-variations)
-<hr />
-👉 Shop Page Swatches Size Control
-
-You will have control over swatch size when you are using this WooCommerce Variation Swatches plugin. You can decide how large or small the swatches will be on the product page. That means, you can set height, or width for the products for the shop page swatches.  
-
- [Live Demo & Documentation](http://bit.ly/3rd-readme-demo-shop-swatches-size) 
-<hr />
-👉 Make Selected Attribute Variation Swatches Size Larger Than Other Default Attribute Variations
-
-You may want to keep a single attribute standout from plenty of WooCommerce Variable Product. This plugin allows you to make your desired attribute variation swatches size larger than other default attribute variations. 
-
- [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-swatches-size-special-attribute)
-<hr />
-👉 Keep Attribute Variation Selected on Product Page After Choosing from Catalog page like Walmart
-
-This Variation Swatches plugin has the option to keep attribute variation selected on the product page after choosing from the catalog page. When you choose a product from the catalog page, it will be selected on the product page like Walmart marketplace. 
-
- [Live Demo & Documentation](http://bit.ly/keep-attribute-variation-selected-on-product-page-after-choosing-from-catalog-page)
-<hr />
-👉 Show Custom Text in Variation Tooltip
-
-It’s a good practice to provide extra descriptive product info to customers.To make online stores more user-friendly, this Product Variation Swatches plugin has brought the feature to show custom text in variation tooltip. 
-
- [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-how-to-enable-text-tooltip)
-<hr />
-👉 Show Custom Image in Variation Tooltip
-
-The image tooltip option plays a vital role by showing the image as tooltip in WooCommerce attribute variation. This Variation Swatches plugin helps you to show a custom image in variation tooltip. It is a fantastic way to present variation products.
-
- [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-image-tooltip)
-<hr />
-👉 Swatches Border Styling
-
-You can make the swatches border styling for each attribute item custom by using this Variation Swatches plugin. The plugin allows you to decide your desired products border color, size, text color, and item background color. 
-
- [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-swatches-border-styling)
-<hr />
-👉 Hover Swatches Border Styling
-
-Using this Variation Swatches plugin for WooCommerce, you can set hover swatches border styling for each WooCommerce product variation. The plugin will let you customize hover swatches border that will affect while hovering the mouse. 
-
- [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-hover-swatches-border-styling)
-<hr />
-👉 Active Swatches Border Styling
-
-When you click on a swatch, the product will be selected. That's known as active swatches.  With the help of the Product Attribute Swatches, you can define border styling for active swatches which will affect when a product selection is made.  
-
- [Live Demo & Documentation](https://bit.ly/active-border-styling)
-<hr />
-👉 Archive Page Swatches Alignment
-
-When all swatches are shown in product archive pages, sometimes it may create misalignment issues. The Variation Swatches WooCommerce plugin allows you to set swatches alignment on left, center, or right on the archive page. 
-
- [Live Demo & Documentation](http://bit.ly/3rd-demo-readme-shop-alignment)
-<hr />
-👉 Show Variation Product Stock Notice
-
-If you wish to let your customer know about the minimum stock of your product is left. This Variation Swatches for WooCommerce swatch plugin is very effective. It has the option to show all the remaining stock for variation products. 
-
- [Live Demo & Documentation](http://bit.ly/show-variation-product-stock-notice)
-<hr />
-<hr />
-👉 WooCommerce Filter Widget
-
-The Variation Swatches for WooCommerce plugin converts filter products by attribute widget into color swatches. This feature of the Swatch plugin will reduce the number of results that the user has to look through. 
-
- [Live Demo & Documentation](http://bit.ly/filter-widget-link-doc)
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#auto-generate-color-by-typing-color-name)
 <hr />
 
-👉 Create Categories & Grouped Variation Swatches
+**Round or Square Swatch Shape**
+Choose whether swatches display as circles or squares, store-wide, without writing any custom CSS. Round shapes tend to suit color swatches, while square shapes often work better for image or button swatches. 
 
-Users may feel confused to select desired variation swatches among many options. Category and Group swatches feature makes it easy to select the right product variation with ease.
+This is a global setting applied across your whole catalog. Premium adds the variation to override the shape for one product at a time.
 
- [Live Demo & Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#category-group-swatches)
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#round-and-square-swatches)
 <hr />
 
-👉 Compatible with Printful, Alidrop, and Multivendor Plugins
+**Adjustable Swatch Size on the Product Page**
+Control exactly how large or small swatches appear on the single product page, directly from the plugin's settings screen. Larger swatches help on image-heavy product pages, while smaller ones fit tightly packed layouts better. 
 
-This Variation Swatches plugin is compatible with major themes and most popular plugins for WooCommerce. On top of that, it is also compatible with printful, alidrop and multivendor plugins.
+No theme editing or custom CSS is required. The setting applies globally across your product pages.
 
-👉 Customize Tooltip Text and Background Color
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#customize-swatches-width-height-and-font-size)
+<hr />
 
-WooCommerce Variation Swatches plugin allows customizing the title text and tooltip background from the admin backend. It also has the option to change text background color. 
+**Text Tooltip on Hover**
+When a customer hovers over a swatch, a text tooltip can pop up with extra detail - the full color name, a material description, or anything else useful. This adds context without cluttering the page with extra text. 
 
-👉 Enable / Disable Ajax Variation
+It's especially helpful for color swatches, where the swatch alone doesn't always make the exact shade obvious. Image tooltips are available as a Premium upgrade from this text-only version.
 
-When WooCommerce starts to use ajax to load your selected variations, this changes the way of selecting products. That time you can enable or disable ajax variation from our plugin settings. 
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#customize-swatches-width-height-and-font-size)
 
-👉 Archive page swatches positioning
+**Show Selected Variations Name Beside the Attribute Label**
+After a customer picks a swatch, the plugin can display that variation's name next to its attribute label - for example, "Color: Ocean Blue" appears once selected. 
 
-The plugin not only allows you to show swatches on the archive page. At the same time,  you can place swatches before and after the add to cart button in the store from Archive Swatches.
+This gives customers a clear confirmation of exactly what they've chosen, useful when the visual alone might be ambiguous. It updates instantly as a customer clicks between variations, with no extra setup beyond enabling it.
 
-👉 Archive page swatches alignment
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#show-selected-variation-name-beside-label)
 
-The plugin not only allows you to show swatches on the archive page. At the same time,  you can place swatches before and after the add to cart button in the store from Archive Swatches.
+**Return Swatches Back to the default Dropdown**
+If swatches aren't the right fit for a particular attribute, or you're testing something on one product, you can switch button swatches back to a plain WooCommerce dropdown with a single setting change. 
 
-👉 Tooltip display setting on archive/shop page
+No data is lost - your attribute terms and values stay exactly as they were. This gives you the flexibility to mix swatch and dropdown display across different parts of your store.
 
-Variation Swatches for WooCommerce plugin offers a simple setting to enable and disable swatches on archive pages. You can show or hide tooltips and clear links on archive pages.
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#convert-buttons-swatches-to-dropdown-if-its-needed)
 
-👉 Variation clear button display setting.
+**Cross Out, Blur, or Hide Out-of-Stock Swatches (Up to 30 Variations)**
+WooCommerce's default dropdown can't visually indicate that a product variation is out of stock, since browsers don't allow that kind of styling inside a default dropdown box. This plugin solves that by crossing out, blurring, or fully hiding swatches for variations that are sold out. 
 
-Clear button allows you to clear the selected attribute variation. The Woocommerce Variation Swatches plugin offers the option to enable and disable clear links on the archive page.
+In the free version, this works for up to 30 variations per product, and needs WooCommerce's "Hide out of stock items from the catalog" setting turned on. Premium removes both the variation limit and that setting requirement.
 
-👉 Customize Tooltip Text and Background Color
-👉 Customize swatches colors, background and border sizes
-👉 Automatic updates
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#hide-blur-out-of-stock-product)
 
-Keeping your plugin updated is crucial for security and stability of your site. We try to update our [variation swatches for woocommerce pro](https://wordpress.org/support/topic/the-best-support-ever-thank-you-guys/) plugin regularly. You can enable auto update for this swatch plugin directly from your WordPress dashboard.
+**Supported With Quick View**
+Swatches display correctly inside Quick View popups triggered from shop or archive pages, not just on the full product page. Customers browsing a grid of products can pick a color or size without ever leaving the shop page. 
 
-👉 Exclusive technical support
+Compatibility depends on how a theme or Quick View plugin loads WooCommerce's variation form, but it's tested against common implementations.
 
-We provide exclusive technical support to our customers. Our plugin has plenty of 5-star customer reviews and positive customer feedback on the WordPress plugin directory for its extraordinary support. 
+**Works With Elementor, Printful, AliDropship & Dokan Multivendor**
+The plugin is tested to work correctly alongside these widely used WooCommerce tools. Elementor compatibility means swatches display properly inside Elementor-built product pages and templates. 
 
+Elementor: [Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#setup-swatches-in-elementor-page-builder)
 
-## 🏆 Customers' Feedback For Variation Swatches For WooCommerce ##
+Printful and AliDropship support matters for dropshipping stores syncing products and variations from those platforms. 
 
-[tysonfrantz](https://wordpress.org/support/topic/great-plugin-awesome-support-127): 
-> 'This is one of the best swatches plugin available. The thing that separates it from the rest is the amazing customer support. I had an issue with my website, and the friendly GetWooPlugins team was able to get it resolved quickly!'
+Printful: [Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#setup-swatches-with-printful-plugin)
+AliDropship: [Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#setup-swatches-in-alidropship)
 
-[nevadauser1](https://wordpress.org/support/topic/the-best-support-ever-thank-you-guys/): 
-> 'These guys went above and beyond trying to help me out, I had an issue with my theme and one of the plugins after a woocommerce update, and they really did the best they could to help me solve the problem! Thank you so much guys specially Shamser!'
+Dokan Multivendor compatibility means vendors on a multi-seller marketplace can use swatches on their own listings.
 
-[jeromepernin](https://wordpress.org/support/topic/top-587/): 
-> 'Super plugin! He literally saved 🙂 a huge thank you to Ahmed who provides extraordinary support. Congratulations to the whole team!'
+Dokan: [Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#setup-swatches-with-dokan-multivendor-plugin)
 
->Will be buying from you again!'
+**Compatible With 300+ WooCommerce Themes**
+The plugin is tested against more than 300 WooCommerce-compatible themes, including OceanWP, Flatsome, Divi, Astra, Avada, Enfold, Salient, Uncode, The7, and Kalium. Because themes can change WooCommerce's default markup, styling, or JavaScript in different ways, a small CSS adjustment is occasionally needed for certain layouts. 
 
-= Sites Built With Variation Swatches for WooCommerce Plugin =
+Most stores can activate the plugin and see swatches working immediately, with no theme-specific configuration required.
 
-<blockquote>
-<ul>
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Flatsome WooCommerce Theme</a>
-</li>
+**WordPress Multisite Support**
+The plugin works correctly across WordPress Multisite network installs, where a single WordPress installation runs multiple sites. Settings and swatch configurations can be managed the same way as on a single-site install. 
 
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Avada WooCommerce Multi-Purpose Theme</a>
-</li>
+This matters for agencies or larger operations running several WooCommerce stores from one network.
 
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Divi by Elegant Themes</a>
-</li>
+**WPML & RTL Support**
+Swatch labels and attribute terms can be translated using WPML, so multilingual stores can offer swatches in every language they support. The plugin also supports right-to-left (RTL) languages, like Arabic or Hebrew, with layout and swatch alignment adjusted accordingly. 
 
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Enfold - WooCommerce Multi-Purpose Theme</a>
-</li>
-
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Astra WooCommerce Theme</a>
-</li>
-
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Salient WooCommerce Theme</a>
-</li>
-
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Twenty Seventen Theme</a>
-</li>
-
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: TheGem WooCommerce Theme</a>
-</li>
-
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Kalium WooCommerce Professionals Theme</a>
-</li>
-
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Jevelin WooCommerce Theme</a>
-</li>
-
-<li> 
-   <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Nitro WooCommerce Theme</a>
-</li>
-
-<li> 
-    <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: KuteShop WooCommerce Theme</a>
-</li>
-
-<li> 
-    <a target="_blank" href="https://getwooplugins.com/showcase-swatches">Built With: Domino WooCommerce Theme</a>
-</li>
-</ul>
-</blockquote>
-
-= Officially tested plugins =
-
-* WPML
-* <a target="_blank" href="https://wordpress.org/plugins/polylang/">Polylang</a>
-* <a target="_blank" href="https://wordpress.org/plugins/loco-translate/">Loco Translate</a>
-
-= Compatible WooCommerce Plugin =
-
-<blockquote>
-
-<ul>
-<li><a target="_blank" href="http://bit.ly/woovs-org-item-page">Additional Variation Image Gallery For WooCommerce</a></li>
-</ul>
-<ul>
-<li><a target="_blank" href="http://bit.ly/swatches-link-to-duplicator-readme">Variation Duplicator For WooCommerce</a></li>
-</ul>
-<ul>
-<li><a target="_blank" href="https://wordpress.org/plugins/woo-cart-redirect-to-checkout-page">Add to Cart Redirect for WooCommerce</a></li>
-</ul>
-
-</blockquote>
+This makes the plugin usable for international and regional WooCommerce stores, not just English-language ones.
 
 
-= Forum and Feature Request =
+**HPOS Compatible**
+The plugin is compatible with WooCommerce's High-Performance Order Storage (HPOS), the newer order data storage system WooCommerce has been moving stores toward. 
 
-<blockquote>
-<h4>Pro Version</h4>
-<ul>
-<li><a target="_blank" href="https://getwooplugins.com/plugins/woocommerce-variation-swatches/?utm_source=wordpress.org&utm_medium=README&utm_campaign=woo-variation-swatches">Pro Version</a></li>
-</ul>
-<ul>
-<li><a target="_blank" href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/?utm_source=wordpress.org&utm_medium=README&utm_campaign=woo-variation-swatches">Documentation</a></li>
-</ul>
-<h4>For Quick Support, feature request and bug reporting</h4>
-<ul>
-<li><a target="_blank" href="http://bit.ly/getwoopluginsgroup">Join Our Facebook Group</a></li>
-</ul>
-<h4>For more information</h4>
-<ul>
-<li><a target="_blank" href="https://getwooplugins.com/?utm_source=wordpress.org&utm_medium=README&utm_campaign=woo-variation-swatches">Visit Our Official Website</a></li>
-</ul>
-</blockquote>
+Swatch-related order and variation data continues to work correctly whether a store uses the legacy post-based storage or HPOS. No extra configuration is needed to enable this compatibility.
 
-= Featured on Popular Blog Sites =
+**Gutenberg Block Support**
+Swatches, filters, and archive listings can be added to pages and templates using dedicated Gutenberg blocks, instead of relying only on shortcodes or theme templates. 
 
-<blockquote>
+This fits naturally into WooCommerce's own block-based product page and shop page building tools. It's useful for stores using a block theme or the Site Editor to build custom shop layouts.
 
-<ul>
-<li><a target="_blank" href="https://wpcred.com">wpcred.com</a></li>
-</ul>
-<ul>
-<li><a target="_blank" href="https://storepress.com">storepress.com</a></li>
-</ul>
+**WooCommerce REST API Support for Swatch Data**
+Color and image swatch data is exposed through the WooCommerce REST API, alongside standard product and variation data. This is useful for developers building custom storefronts, mobile apps, or headless WooCommerce setups that need swatch information outside the standard WordPress front end. 
 
-</blockquote>
+No additional API keys beyond standard WooCommerce REST API authentication are required.
+
+**Regular Updates & Security Fixes**
+The plugin receives ongoing updates to maintain compatibility with new WordPress and WooCommerce releases, add small improvements, and fix reported issues. Staying updated ensures fixes reach your store as soon as they're available.
+
+==Pro Features==
+
+**Display Swatches in Catalog / Archive Page**
+Shows swatches directly on shop, category, and archive pages, not just the individual product page. Customers browsing a grid of products can see and interact with color, image, or button swatches before clicking into a product. 
+
+You can control whether all attributes or just one selected attribute appears per product card, and adjust swatch size and alignment for archive layouts.
+
+https://www.youtube.com/watch?v=1IhEZiGzJHs
+
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#how-to-enable-swatches-on-archive-shop-page-premium)
+
+**Create Product Variation Swatches From Custom Product Level Attribute**
+Adds swatch support for attributes created directly inside a single product, rather than shared globally across the catalog under Products > Attributes. 
+
+This is useful for a one-off product that needs an attribute no other product uses. The free version only supports swatches on global attributes.
+
+https://www.youtube.com/watch?v=Ny9QBY_x9cA
+
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#manual-color)
+
+**Radio Button Swatches (Premium)**
+A fourth swatch type, alongside color, image, and button/label, showing variations as radio-style selectable buttons. This suits attributes where a more form-like, structured selection style fits your store's design better than color or image swatches. Like the other swatch types, radio swatches can be styled and sized to match your theme.
+
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#how-to-enable-radio-swatches-premium)
+
+**WooCommerce Filter Widgets (Premium)**
+Converts WooCommerce's built-in "Filter Products by Attribute" widget from a plain checkbox or dropdown list into visual swatches. 
+
+Customers filtering a shop or category page by color or size see the same visual swatches they'd see on a product page, instead of a plain text list. This keeps the filtering experience consistent with the rest of the store.
+
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#woocommerce-color-filter-widget)
+
+**Variation Image Tooltip in Catalog / Archive Page (Premium)**
+Shows an image preview tooltip when a customer hovers over a swatch on shop, category, or archive pages, similar to the image tooltip available on the single product page. 
+
+This lets customers preview a variation's appearance without leaving the catalog page. It pairs naturally with the archive page swatch display feature above.
+
+[Live Demo | Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/#how-to-enable-image-tooltip)
+
+**Unlimited Out-of-Stock Variation Handling (Premium)**
+Removes the free version's 30-variation cap on crossing out, blurring, or hiding out-of-stock swatches, and removes the requirement to enable WooCommerce's "Hide out of stock items from the catalog" setting. 
+
+This matters most for products with large variation counts, since WooCommerce itself switches to Ajax-based loading past roughly 30 variations.
+
+https://www.youtube.com/watch?v=bPJmF1jmAnI
+
+ **Premium Features** 
+
+* Radio button swatches
+* Product-level (custom) attribute swatches
+* Per-product overrides (color, image, shape)
+* Image tooltips, border styling, tooltip color customization
+* Larger size for a highlighted attribute
+* Category and group swatches
+* Dual/multi-color swatches
+* Unlimited out-of-stock handling
+* Shop, category, and archive page swatches
+* Filter widget swatches
+* Archive "MORE" link and attribute display limit
+* Gallery change on attribute select
+* Direct variation links
+* Remaining stock display
+* Priority support, automatic updates
+
+**Who is This Plugin For?**
+
+Any WooCommerce store selling variable products - clothing, shoes, jewelry, furniture, electronics, and beauty products all benefit from visual swatches over plain dropdowns. It matters most once a product has more than a couple of variations per attribute.
+
+**Why Use Variation Swatches?**
+
+* **Works on every theme.** WooCommerce's default wc visual attribute type (added in version 10.9) only support on block themes. This plugin support wc visual attribute type which works on classic themes too, including StoreFront, Flatsome, Divi, and Astra.
+* **Handles out-of-stock properly.** A plain dropdown can't be blurred or crossed out. This plugin can.
+* **A genuinely useful free version.** Core swatch types and out-of-stock handling for up to 30 variations, at no cost.
+* **Support that shows up.** Most reviews mention the support team before any single feature.
+
+*Documentation & Support*
+
+[Documentation](https://getwooplugins.com/documentation/woocommerce-variation-swatches/) · [Support](https://getwooplugins.com/tickets/) · [Facebook Group](https://www.facebook.com/groups/GetWooPlugins/)
+
+Premium purchases include 365 days of support and a 30-day money-back guarantee.
+
+**External services**
+
+This plugin connects to one outside service, and only when you turn it on.
+
+**Service:** StorePress Colors API
+**Provider:** StorePress
+**Service URL:** https://colors.storepress.com/
+**What it does:** looks up a color's hex code from the color name you type.
+
+**What is sent:** only the color name you type in the search box. Nothing else. A search for "Green" sends this request: `https://colors.storepress.com/v1/?name=Green`. The service sends back the matching hex code and 8 related shades from 45000+ colors.
+
+**When it is sent:** only when you turn on the color API in Settings, and only when you type a search. It is off by default. While off, the plugin makes no request at all - not on install, not on page load, and not in the background.
+
+**What is not sent:** no personal data. license key, email, username, or WordPress version. Not any data about your site's visitors. The request comes from your own server, not from a customer's browser, so no visitor IP address, cookie, or referrer is sent either.
+
+You can turn this feature off any time in Settings. See the FAQ below for details.
 
 == Installation ==
 
-### Automatic Installation From WordPress Dashboard
+**From your WordPress dashboard**
+1. Go to Plugins > Add New.
+2. Search for "Variation Swatches for WooCommerce".
+3. Click Install, then Activate.
 
-1. Login to your admin panel
-2. Navigate to Plugins -> Add New
-3. Search **Variation Swatches for WooCommerce**
-4. Click install and activate respectively.
+**Upload a ZIP file**
+1. Download the plugin ZIP file.
+2. Go to Plugins > Add New > Upload Plugin.
+3. Choose the ZIP file and click Install, then Activate.
 
-### Manual Installation From WordPress Dashboard
-
-If your server is not connected to the Internet, then you can use this method-
-
-1. Download the plugin by clicking on the red button above. A ZIP file will be downloaded.
-2. Login to your site's admin panel and navigate to Plugins -> Add New -> Upload.
-3. Click choose file, select the plugin file and click install
-
-### Install Using FTP
-
-If you are unable to use any of the methods due to internet connectivity and file permission issues, then you can use this method-
-
-1. Download the plugin by clicking on the red button above. A ZIP file will be downloaded.
-2. Unzip the file.
-3. Launch your favorite FTP client. Such as FileZilla, FireFTP, CyberDuck etc. If you are a more advanced user, then you can use SSH too.
-4. Upload the folder to `wp-content/plugins/`
-5. Log in to your WordPress dashboard.
-6. Navigate to Plugins -> Installed
-7. Activate the plugin
+**By FTP**
+1. Download and unzip the plugin.
+2. Upload the folder to `wp-content/plugins/` using an FTP client such as FileZilla or CyberDuck.
+3. Go to Plugins in your dashboard and click Activate.
 
 == Frequently Asked Questions ==
 
-= How can I configure attributes? =
+= I installed the plugin but I still see dropdowns. What's wrong? =
 
-Even this plugin has been installed and activated on your site, variable products will still show dropdowns if you’ve not configured product attributes.
+The plugin needs at least one attribute set to Color, Image, or Button/Label before it can show swatches. Go to **Products > Attributes**, click an attribute, and change its type. Then add a color, image, or label to each term. Dropdowns for attributes still set to "Select" or "Text" will keep showing as dropdowns.
 
-1. Log in to your WordPress dashboard, navigate to the Products menu and click Attributes.
-2. Click attribute name to edit an exists attribute or in the Add New Attribute form you will see the default Type selector.
-3. Click that Type selector to change attribute’s type. Besides default options Select and Text, there are more 3 options Color, Image, Button/Label to choose.
-4. Select the suitable type for your attribute and click Save Change/Add attribute
-5. Go back to manage attributes screen. Click the cog icon on the right side of attribute to start editing terms.
-6. Start adding new terms or editing exists terms. There will be a new option at the end of the form that allows you to choose color from colorpicker, upload image or choose as a button for those terms.
+= What is the difference between the free and premium version? =
 
-= Is it compatible with any kinds of WooCommerce Theme? =
+The free version covers the core swatch types (color, image, button/label), basic styling, and out-of-stock handling for up to 30 variations. Premium adds radio button swatches, shop and archive page swatches, per-product control, unlimited out-of-stock handling, and extra styling variations. The full list is above, split into "Free features" and "Premium features".
 
-Yes, it's compatible with any WooCommerce theme including OceanWP / Astra / Flatsome / X-Theme / Avada / Uncode / Storefront / Labomba / WR Nitro / Divi / BeTheme. But sometimes it may require small css tweak.
+= Why does the out-of-stock feature only work up to 30 variations? =
 
-For more details. Check this <a target="_blank" href="https://bit.ly/100swatches"> 100+ WooCommerce Themes that support Variation Swatches plugin</a>
+That limit only applies to the free version. Past around 30 variations, WooCommerce switches to loading variations by Ajax, and simple free-tier code stops keeping up. Premium is built to handle unlimited variations, with or without Ajax loading.
 
-= Does it show in product QuickView? =
+= Does this replace WooCommerce's own color swatches? =
 
-Yes, it supports any kinds of product quick view.
+WooCommerce added its own color swatches in version 10.9, but they only appear on block themes. This plugin works on classic themes too, plus it adds image and button swatches, out-of-stock handling, per-product control, and more - none of which WooCommerce's built-in swatches offer.
 
-= Does it work on MultiSite? =
+= Will this work with my theme? =
 
-Yes, it is.
+Yes, in almost every case. This plugin works with over 300 WooCommerce themes, including StoreFront, OceanWP, Flatsome, Astra, Divi, Avada, Enfold, and Salient. Some themes may need a small CSS tweak.
 
-= How to use it on ajax load more? =
+= Does it work with Quick View? =
 
-If your theme follow wordpress 'post-load' event with `document` then you don't have to do anything.
-Here is the details about it: https://codex.wordpress.org/AJAX_in_Plugins#The_post-load_JavaScript_Event
+Yes. It works with Quick View popups from any theme or plugin.
 
-But if you don't then just call this javascript function on ajax load event
+= Can I use swatches with custom (product-level) attributes? =
+
+Yes, but this is a Premium feature. The free version turns your global attributes (the ones under Products > Attributes, shared across products) into swatches. If you type an attribute directly into a single product without saving it globally, converting that one-off, product-level attribute into a swatch needs Premium.
+
+= Does it work on WordPress Multisite? =
+
+Yes.
+
+= How do I use it with "Ajax load more" or infinite scroll? =
+
+If your theme fires the standard WordPress `post-load` event, you don't need to do anything. If it doesn't, add this small script on your Ajax load event:
+
 ```
 $('.variations_form').each(function(){
     $(this).wc_variation_form();
 });
 ```
-And your are ready to go.
+
+= Can I turn the color lookup (Colors API) off? =
+
+Yes. It is off by default. Turn it on or off any time from the plugin's Settings page. While it's off, the plugin sends no requests to the outside service at all.
+
+= Will this slow down my store? =
+
+No. Swatches load with your normal WooCommerce scripts, and the color lookup only runs when you search for a color name inside wp-admin - it never loads on your storefront.
+
+= Is there a Premium version? What does it add? =
+
+Yes. Premium adds radio button swatches, product-level (custom) attribute support, per-product overrides, shop and archive page swatches, unlimited out-of-stock handling, deeper styling control, and priority support. See the "Premium features" list above, or visit https://getwooplugins.com/plugins/woocommerce-variation-swatches/ for full pricing.
 
 == Screenshots ==
 
@@ -615,705 +349,179 @@ And your are ready to go.
 
 == Changelog ==
 
-= 2.2.2 - 11-11-2025 =
+= 2.5.0 - 17-09-2026 =
+* Added: WC 11.1+ compatibility.
+* Added: WooCommerce WC Visual Attribute support for Classic themes.
+* Added: Attribute label change shape style.
 
+= 2.4.0 - 19-08-2026 =
+* Added: WP 7.1+ compatibility.
+* Added: WC 11.0+ compatibility.
+* Added: StorePress Colors API integration, to find a color's hex value from its name.
+* Fixed: A security issue reported by Fraudless.tech.
+
+= 2.3.0 - 08-06-2026 =
+* Added: WP 7.0+ compatibility.
+* Added: WC 10.8+ compatibility.
+* Added: YITH WooCommerce Waitlist compatibility.
+* Added: filter `woo_variation_swatches_add_to_cart_variation_params`.
+* Fixed: `woo_variation_swatches_total_children` returning `{}`.
+
+= 2.2.3 - 08-02-2026 =
+* Added: WP 6.9+ and WC 10.5+ compatibility.
+* Fixed: disabled Add to Cart button issue.
+* Updated: archive stock info position.
+
+= 2.2.2 - 11-11-2025 =
 * Added: WC 10.3+ compatibility.
 
 = 2.2.1 - 11-09-2025 =
-
-* Fixed: Composite product re-insert label issue.
-* Added: WP 6.8+ compatibility.
-* Added: WC 10.1+ compatibility.
+* Added: WP 6.8+ and WC 10.1+ compatibility.
+* Fixed: composite product re-insert label issue.
 
 = 2.2.0 - 16-02-2025 =
-
-* Fixed: Broken Settings html table.
-* Added: Lazy Loading on swatches images to improve performance.
+* Added: lazy loading on swatch images, to improve page speed.
+* Fixed: broken settings table.
 
 = 2.1.3 - 11-12-2024 =
-
-* Fixed: JS Setting update warning trigger issue.
-* Added: WP 6.7+ compatibility.
-* Added: WC 9.4+ compatibility.
+* Added: WP 6.7+ and WC 9.4+ compatibility.
+* Fixed: JS setting update warning trigger issue.
 
 = 2.1.2 - 29-08-2024 =
-
-* Added: WooCommerce 9.2+ Compatibility.
-* Added: Admin Menu "Clear swatches transient".
+* Added: WC 9.2+ compatibility.
+* Added: "Clear swatches transient" tool in the admin menu.
 
 = 2.1.1 - 02-07-2024 =
-
-* Fixed: Attribute meta save issue.
-* Update: WooCommerce 9.0+ Compatibility.
+* Updated: WC 9.0+ compatibility.
+* Fixed: attribute meta save issue.
 
 = 2.1.0 - 06-06-2024 =
-
-* Fixed: PHPCS Issues.
-* Updated: Add 3rd param to `get_swatch_data()` method.
-* New: `wpml-config.xml` file added to support WPML.
-* Update: WooCommerce 8.9+ Compatibility.
-* Update: Modify theme support feature. to `woo_variation_swatches`. Example: `add_theme_support( 'woo_variation_swatches', array( 'enable_stylesheet' => 'no', 'enable_tooltip' => 'no' ) );` for theme developer default setting control.
+* Added: `wpml-config.xml` file, for WPML support.
+* Updated: WC 8.9+ compatibility.
+* Updated: theme support hook renamed to `woo_variation_swatches`, e.g. `add_theme_support( 'woo_variation_swatches', array( 'enable_stylesheet' => 'no', 'enable_tooltip' => 'no' ) );`
+* Fixed: PHPCS issues.
 
 = 2.0.31 - 23-04-2024 =
+* Updated: WP 6.5+ and WC 8.8+ compatibility.
 
-* Update: WordPress 6.5+ Compatibility.
-* Update: WooCommerce 8.8+ Compatibility.
-
-= 2.0.30 - 15-01-2023 =
-
-* Update: WooCommerce 8.4+ Compatibility.
+= 2.0.30 - 15-01-2024 =
+* Updated: WC 8.4+ compatibility.
 
 = 2.0.29 - 21-11-2023 =
-
-* Update: WordPress 6.4+ Compatibility.
-* Update: WooCommerce 8.3+ Compatibility.
+* Updated: WP 6.4+ and WC 8.3+ compatibility.
 
 = 2.0.28 - 25-10-2023 =
-
-* Fix: Hide disabled variation attributes
+* Fixed: hide disabled variation attributes.
 
 = 2.0.27 - 18-10-2023 =
-
-* Fix: Block variation product add to cart
-* Fix: Select2 hover css issue fixed.
-* Update: WooCommerce 8.2 Compatibility.
-* Add: Filter added: `woo_variation_swatches_remove_attribute_item` and `woo_variation_swatches_get_swatch_data`
+* Updated: WC 8.2 compatibility.
+* Added: filters `woo_variation_swatches_remove_attribute_item` and `woo_variation_swatches_get_swatch_data`.
+* Fixed: blocked variation add-to-cart, and a Select2 hover CSS issue.
 
 = 2.0.26 - 05-09-2023 =
-
-* Fix: All import plugin issue.
+* Fixed: import plugin conflict.
 
 = 2.0.25 - 31-08-2023 =
-
-* Add: WordPress 6.3 compatibility
-* Add: WooCommerce 8.0 compatibility
-* Update: Color / Image data can update by API Request
+* Added: WP 6.3 and WC 8.0 compatibility.
+* Updated: color and image data can now update by API request.
 
 = 2.0.24 - 05-07-2023 =
-
-* Fix: Bundle product radio attribute issue.
+* Fixed: bundle product radio attribute issue.
 
 = 2.0.23 - 18-06-2023 =
-
-* Update: WooCommerce 7.8 Compatibility
-* Fix: API Issue
+* Updated: WC 7.8 compatibility.
+* Fixed: API issue.
 
 = 2.0.22 - 11-06-2023 =
-
-* Fix: Tooltip width issue
+* Fixed: tooltip width issue.
 
 = 2.0.21 - 02-06-2023 =
-
-* Update: WooCommerce 7.7 Compatibility
-* Update: Responsive tooltip
-* Add: Additional rest api response
-* Add: Filters to modify attribute template response
+* Updated: WC 7.7 compatibility, responsive tooltip.
+* Added: extra REST API response data and filters for the attribute template.
 
 = 2.0.20 - 13-04-2023 =
-
-* Fix: Product children check issue
-* Update: WP 6.2 Compatibility
+* Updated: WP 6.2 compatibility.
+* Fixed: product children check issue.
 
 = 2.0.19 - 16-03-2023 =
-
-* Add: High-Performance order storage (COT) feature compatibility.
-* Fix: Variation cache cleaning issue.
-* Update: WC 7.5 Compatibility
+* Added: High-Performance order storage (HPOS) compatibility.
+* Updated: WC 7.5 compatibility.
+* Fixed: variation cache cleaning issue.
 
 = 2.0.18 - 18-01-2023 =
-
-* Update: caching function
-* Update: WC 7.3 Compatibility
+* Updated: WC 7.3 compatibility, caching function.
 
 = 2.0.17 - 06-01-2023 =
-
-* Add: show product variation image if image type attribute have no image selected
-* Fix: clearing transient after attribute update
+* Added: show the variation image if an image-type attribute has none selected.
+* Fixed: transient clearing after attribute update.
 
 = 2.0.16 - 13-12-2022 =
-
-* Fix: litespeed-cache plugin trigger error to use WP_Object_Cache::flush_group method
+* Fixed: LiteSpeed Cache plugin error.
 
 = 2.0.15 - 12-12-2022 =
-
-* Fix: Object cache issue
+* Fixed: object cache issue.
 
 = 2.0.14 - 06-12-2022 =
-
-* Fix: Variation delete error
+* Fixed: variation delete error.
 
 = 2.0.13 - 17-11-2022 =
-
-* Update: Performance Improvement
+* Updated: performance improvements.
 
 = 2.0.12 - 31-10-2022 =
-
-* Update: Update Migration Script
-* Update: Modify `woo_variation_swatches_variable_item_custom_attributes` filter
+* Updated: migration script and `woo_variation_swatches_variable_item_custom_attributes` filter.
 
 = 2.0.11 - 28-09-2022 =
-
-* Update: WooCommerce Support
+* Updated: WooCommerce support.
 
 = 2.0.10 - 15-09-2022 =
-
-* Update: WooCommerce Support
-* Update: JS Scripts
-* Fix: WPML Option issue
+* Updated: WooCommerce support and JS scripts.
+* Fixed: WPML option issue.
 
 = 2.0.9 - 28-08-2022 =
-
-* Update: Translation String
-* Update: Settings Script and RTL
+* Updated: translation strings, settings script, RTL support.
 
 = 2.0.8 - 17-08-2022 =
-
-* Fix: Caching header issue
+* Fixed: caching header issue.
 
 = 2.0.7 - 11-08-2022 =
-
-* Update: Woocommerce 6.8 support
-* Add: Caching header for ajax response
+* Updated: WC 6.8 support.
+* Added: caching header for Ajax response.
 
 = 2.0.6 - 31-07-2022 =
-
-* Fix: dependency script updated for product page settings save issue
-* Update: `is_admin()` check removed for some theme support
+* Fixed: product page settings save issue.
 
 = 2.0.5 - 20-07-2022 =
-
-* Add: `woo_variation_swatches_html` filter to modify swatches output
-* Add: `woo_variation_swatches_nav_widget_html` filter to modify widget output
-* Update: `[wvs_show_archive_variation]` shortcode updated, now `product_id` can be added like: `[wvs_show_archive_variation product_id="ID"]`.
-* Update: `data-dependency` attribute to `data-gwp_dependency` for possible conflict.
-* Update: translation string.
+* Added: filters `woo_variation_swatches_html` and `woo_variation_swatches_nav_widget_html`.
+* Updated: `[wvs_show_archive_variation]` shortcode now accepts `product_id`.
 
 = 2.0.4 - 08-07-2022 =
-
-* Fix: Composite Product Selecting Issue
-* Add: Option to change tick and cross icon color
-* Add: Option to enable/disable preloader
+* Added: option to change the tick and cross icon color, option to enable/disable the preloader.
+* Fixed: composite product selection issue.
 
 = 2.0.3 - 26-06-2022 =
-
-* Fix: Out of Stock info
+* Fixed: out-of-stock info issue.
 
 = 2.0.2 - 23-06-2022 =
-
-* Add: Image type fallback if no attribute image added.
-* Fix: Archive add to cart issue
-* Add: Ajax Quick View / Load More support
+* Added: image fallback for attributes with no image, Ajax Quick View / Load More support.
+* Fixed: archive add-to-cart issue.
 
 = 2.0.1 - 16-06-2022 =
-
-* Add: Hex to RGBA color conversion on migration
-* Fix: Disable attribute hide css issue.
-* Fix: variation selected css issue.
+* Added: hex-to-RGBA color conversion on migration.
+* Fixed: attribute hide CSS and variation-selected CSS issues.
 
 = 2.0.0 - 13-06-2022 =
-
-* Update: plugin structure change and add more features.
-
-= 1.1.19 - 07-09-2021 =
-
-* Fix: show_option_none value
-
-= 1.1.18 - 06-09-2021 =
-
-* Update: WooCommerce and WordPress Compatibility
-* Fix: Bundle Product selected issue
-
-= 1.1.17 - 08-05-2021 =
-
-* Update: Update PHP functions
-
-= 1.1.16 - 03-05-2021 =
-
-* Fix: Backend CSS
-
-= 1.1.15 - 24-04-2021 =
-
-* Fix: WPML currency switcher issue.
-* Add: Function added to get Dual color values
-
-= 1.1.14 - 11-04-2021 =
-
-* Fix: WPML product term meta issue.
-* Update: Backend CSS
-
-= 1.1.13 - 10-03-2021 =
-
-* Add: WooCommerce and WordPress Compatibility
-* Update: Remove `_.contains` and replace with `_.includes`
-
-= 1.1.12 - 02-03-2021 =
-
-* Update: Add UnderscoreJS on script dependency
-
-= 1.1.11 - 01-03-2021 =
-
-* Fix: WooCommerce Composite Products selection issue
-* Update: Swatch support for Global Ajax complete event
-* Update: Swatches Markup Modified
-* New: Disable WoodMart theme default swatches
-
-= 1.1.10 - 16-02-2021 =
-
-* Fix: Error when woocommerce not available
-
-= 1.1.9 - 12-02-2021 =
-
-* Fix: no_cache header modification issue
-
-= 1.1.8 - 08-02-2021 =
-
-* Fix: RTL label css
-* Update: Load scripts globally
-
-= 1.1.7 - 01-02-2021 =
-
-* Support: WooCommerce Composite Product
-
-= 1.1.6 - 27-01-2021 =
-
-* Update: Extended note on Performance Section
-
-= 1.1.5 - 13-01-2021 =
-
-* Update: Remove `wp_ajax_wvs_get_available_variations` hook
-
-= 1.1.4 - 12-01-2021 =
-
-* Fix: `WC_Cache_Helper::invalidate_cache_group()` method issue.
-
-= 1.1.3 - 10-01-2021 =
-
-* Update: Use `WC_Cache_Helper` for template caching
-* Update: Support Latest WP and WC
-
-= 1.1.2 - 26-11-2020 =
-
-* Fix: Customizer JS Issue.
-
-= 1.1.1 - 16-11-2020 =
-
-* Update: WooCommerce 4.7 compatibility
-
-= 1.1.0 - 27-10-2020 =
-
-* Add: Selected attribute name beside label
-* Update: Support WooCommerce 4.6 version
-* Update: Accessibility
-
-= 1.0.86 =
-
-* Update: Support WooCommerce 4.4 version
-* Update: Support WordPress 5.5 version
-* Fix: Alpha color channel issue
-
-= 1.0.85 =
-
-* Update: Support WooCommerce 4.3 version
-
-= 1.0.84 =
-
-* Add: `wvs-no-css` will add on when stylesheet disabled. `wvs-css` will add on when stylesheet enabled, `wvs-no-tooltip` will add on when tooltip disabled, `wvs-tooltip` will add on when tooltip enabled.
-
-= 1.0.83 =
-
-* Update: Remove CSS Selector from body tag.
-
-= 1.0.82 =
-
-* Add: Filter `wvs_product_global_attribute_image_id` to modify attribute image.
-* Add: Variation attribute image preview based on availability.
-
-= 1.0.81 =
-
-* Fix: User select issue on firefox mobile.
-
-= 1.0.80 =
-
-* Add: WordPress 5.4 compatibility
-* Fix: Default image for quote attribute value.
-
-= 1.0.79 =
-
-* Fix: Rollback some features to 1.0.76 to fix a known issue.
-
-= 1.0.78 =
-
-* Fix: Attribute behavior: Hide issue
-
-= 1.0.77 =
-
-* Add: WooCommerce 4.0 compatibility
-* Fix: Facebook for woocommerce issue.
-* Divi theme css issue fix.
-
-= 1.0.76 =
-
-* Fix: settings option php notice.
-
-= 1.0.75 =
-
-* Fix: mobile double tab clear issue.
-
-= 1.0.74 =
-
-* Fix: tooltip issue.
-
-= 1.0.73 =
-
-* Fix: QuickView issue
-
-= 1.0.72 =
-
-* Add: Namespace on themes events
-* Fix: WooCommerce Product bundle Issue.
-
-= 1.0.71 =
-
-* Update: Tooltip transform
-* Fix: Field Dependency Js Load
-
-= 1.0.70 =
-
-* Fix: Divi builder load issue.
-* Fix: Default selected tooltip Issue.
-* Update: Field Dependency css.
-
-= 1.0.69 =
-
-* Update: Disable Defer JS Load by Default and on mobile device.
-
-= 1.0.68 =
-
-* Fix: WooCommerce transients clear fix
-
-= 1.0.67 =
-
-* Fix: Swatch Image Size CSS Issue
-
-= 1.0.66 =
-
-* Fix: Simple product Issue
-
-= 1.0.65 =
-
-* Add: Speed Improvement
-
-= 1.0.64 =
-
-* Fix: Mobile Scroll Issue
-
-= 1.0.63 =
-
-* Add: Select attribute set type button by default.
-* Fix: Transients issue.
-
-= 1.0.62 =
-
-* Add: WC 3.7 update
-
-= 1.0.61 =
-
-* Fix: CSS source map issue.
-
-= 1.0.60 =
-
-* Fix: Clear selection js error fix.
-
-= 1.0.59 =
-
-* Add: Dokan Multivendor Support added
-
-= 1.0.58 =
-
-* Fix: Inactive WooCommerce notice
-* Fix: Known Issues
-
-= 1.0.57 =
-
-* Fix: Some known issues
-* Add: WordPress 5.2 Compatibility
-
-= 1.0.56 =
-
-* Fix: Language load
-* Add: FacetWP Load More Option
-* Add: WooCommerce 3.6 update
-
-= 1.0.55 =
-
-* Add: Oxygen Theme Support CSS
-
-= 1.0.54 =
-
-* Fix: Load Assets without CDN.
-* Remove: Product Page popup attribute
-
-= 1.0.53 =
-
-* Fix: IE 11, CSS flexbox issue
-
-= 1.0.52 =
-
-* Add: Yith Product filter support
-
-= 1.0.51 =
-
-* Add: Flatsome theme Infinite Scroll Support
-* Fix: Massive Dynamic theme CSS Issue
-
-= 1.0.50 =
-
-* Fix: Archive more click issue.
-* Add: Adiva Theme support.
-
-= 1.0.49 =
-
-* Fix: Gecko theme support
-* Add: Set default Shape style to Squared Shape
-
-= 1.0.48 =
-
-* Fix: Some speed issue.
-
-= 1.0.47 =
-
-* Add: Filter `disable_wvs_body_class` to disable or enable body class.
-
-= 1.0.46 =
-
-* Add: Filter `disable_wvs_enqueue_scripts` to disable or enable enqueuing scripts.
-* Add: Filter `disable_wvs_inline_style` to disable or enable inline style.
-
-= 1.0.45 =
-
-* Fix: WC 3.5 Issue
-
-= 1.0.44 =
-
-* Add: IE-11 Support
-* Add: Exporter-Importer
-
-= 1.0.43 =
-
-* Fix: Uncode theme Issue
-
-= 1.0.42 =
-
-* Fix: JS Reload variation.
-
-= 1.0.41 =
-
-* Fix: uShop by themetim CSS Issue
-
-= 1.0.40 =
-
-* Improve: Live Feed
-
-= 1.0.39 and 1.0.39.1 =
-
-* Fix: Elementor Pro CSS Issue
-
-= 1.0.38 =
-
-* Remove: Pro Class from Settings
-
-= 1.0.37 =
-
-* Add: RTL Support
-* Fix: The Gem Theme CSS Issue
-
-= 1.0.36 =
-
-* Add: Yith Infinite Scroll support
-* Fix: Yoast SEO Focused keyword issue.
-
-= 1.0.35 =
-
-* Add: AURUM theme support
-* Fix: WooCommerce Product Bundle conflict.
-
-= 1.0.34 =
-
-* Fix: Known JS Issue
-
-= 1.0.33 =
-
-* Fix: CSS Issue
-
-= 1.0.32 =
-
-* Add: Out of stock product crossed also if "Hide out of stock items from the catalog" unchecked.
-
-= 1.0.31 =
-
-* Add: **Kalium** theme css fix
-
-= 1.0.30 =
-
-* Add: body class uniqueness
-* Add: Centralise feed
-* Fix: Elementor Pro JS Issue
-
-= 1.0.29 =
-
-* Add: IE-11 fallback
-* Add: Increase `variation_threshold` label
-* Fix: Divi woo_layout_injector script override
-
-= 1.0.28 =
-
-* Add: Admin Notice CSS
-
-= 1.0.27 =
-
-* Add: SelectBox class for more control
-* Add: **StockHolm** Theme Compatibility
-
-= 1.0.26 =
-
-* Improve: Tooltip
-* Add: **Enfold** Theme Compatibility
-
-= 1.0.25 =
-
-* Add: `gwp_affiliate_id` Filter for Affiliate link ID in more place.
-
-= 1.0.24 =
-
-* Improve: Frontend Visual Appearance
-* Fix: Some known issues
-
-= 1.0.23 =
-
-* Improve: Frontend Visual Appearance
-* Add: **Flatsome** Theme shortcode override
-
-= 1.0.22 =
-
-* Add: **OceanWP** Theme Compatibility
-* Add: **Sober** Theme Compatibility
-* Add: **Shophistic Lite** Theme Compatibility
-* Add: **Old Haven** Theme Compatibility
-
-= 1.0.21 =
-
-* Fix: Known JS Issue
-* Fix: Tooltip disable item disable issue
-* Add: `gwp_affiliate_id` Filter to add affiliate referral link
-
-= 1.0.20 =
-
-* New: Font Size settings
-* Improve: Frontend Visual Appearance
-
-= 1.0.19 =
-
-* New: Size settings
-* Improve: Visual Appearance
-
-= 1.0.18 =
-
-* Update: CSS
-* New: Attribute behaviour
-
-= 1.0.17 =
-
-* Fix: Visual CSS Issue
-
-= 1.0.16 =
-
-* Update: Improve JS Functionality
-* Update: Multisite Compatibility
-
-= 1.0.15 =
-
-* New: Attribute deselect option
-* Fix: Custom attribute select from product
-* Update: translation
-
-= 1.0.14 =
-
-* New: Support Jetpack's Infinite Scroll event, `post-load` event.
-* New: `wvs_product_attribute_image_size` filter to change attribute image size
-* New: Increased tooltip z-index
-
-= 1.0.13 =
-
-* Fix: Avada theme select issue
-
-= 1.0.12 =
-
-* Fix: Disable publish button issue
-
-= 1.0.11 =
-
-* New: Attribute create from product
-* New: Variation Preview color, image
-* New: Settings option also added on customizer
-* Fix: Any variation issue caused by Out-of-Stock variation
-
-= 1.0.10 =
-
-* New: Extendable hooks added to extend
-* New: ajax variation threshold option added to control ajax variation.
-* Fix: Out Of Stock Product Issue.
-
-= 1.0.9 =
-
-* Fix: Merged Pull request from `spoyntersmith`
-* Fix: Tooltip hardware acceleration issue fix for theme animation
-* Fix: use jquery `sibling` instead of `prev`
-
-= 1.0.8 =
-
-* Update: Improve variation javascript to support ajax variation
-* Update: Renamed tooltip attribute to resolve conflict
-* Update: Renamed variation javascript class name
-
-= 1.0.7 - 2018-01-21 =
-
-* Update: Improving frontend CSS
-* Update: Disable Bootstrap tooltip conflict
-
-= 1.0.6 - 2018-01-19 =
-
-* Update: translation
-
-= 1.0.5 - 2018-01-19 =
-
-* Fix: backend js issue
-
-= 1.0.4 - 2018-01-17 =
-
-* Fix: Number Select Issue
-
-= 1.0.3 - 2018-01-15 =
-
-* New: Css class on body based on settings
-* Update: tooltip and frontend css changed
-* New: `add_theme_support( 'woo-variation-swatches', array( 'tooltip' => FALSE, 'stylesheet' => FALSE ) );` for theme developer default setting control.
-* New: `wvs_clear_transient` to clear saved transient.
-
-= 1.0.2 - 2018-01-08 =
-
-* New: attribute tooltip
-* New: Default stylesheet enable/disable option
-* New: Display style added to show Rounded / Squared shaped style
-
-= 1.0.1 - 2017-12-23 =
-
-* Fix: text type select list
-
-= 1.0.0 - 2017-12-20 =
-
-* Initial release
+* Updated: full plugin structure rewrite, with more features added.
+
+= Legacy 1.x history (2017–2021) =
+Versions 1.0.0 through 1.1.19 were the plugin's original codebase, before the 2022 rewrite. Highlights from that period:
+* 2017: initial release, with core color, image, and button swatch support.
+* 2018: added attribute behavior (out-of-stock handling), tooltips, and RTL support.
+* 2019–2020: added WooCommerce Composite Products support, importer/exporter, and dozens of theme-specific CSS fixes.
+* 2021: added Dokan Multivendor support and WPML compatibility improvements.
+
+The full version-by-version log for this period is available in the plugin's SVN repository on WordPress.org.
 
 == Upgrade Notice ==
 
 = 2.0 =
-If you are using PRO version of this plugin please disable it first. This version has a lot of update.
+If you are using the PRO version of this plugin, disable it first. This version includes a large update.

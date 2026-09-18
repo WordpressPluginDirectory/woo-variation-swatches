@@ -38,9 +38,11 @@ if ( ! class_exists( 'Woo_Variation_Swatches' ) ) {
 			// Deprecated file: class-woo-variation-swatches-cache.php
 			// require_once __DIR__ . '/class-woo-variation-swatches-cache.php';
 			require_once __DIR__ . '/class-woo-variation-swatches-manage-cache.php';
+			require_once __DIR__ . '/class-woo-variation-swatches-wc-visual.php';
 			require_once __DIR__ . '/class-woo-variation-swatches-frontend.php';
 			require_once __DIR__ . '/class-woo-variation-swatches-backend.php';
 			require_once __DIR__ . '/class-woo-variation-swatches-blocks.php';
+			require_once __DIR__ . '/class-woo-variation-swatches-attribute-fields.php';
 			require_once __DIR__ . '/functions.php';
 		}
 
@@ -50,7 +52,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches' ) ) {
 		 * @example: [wvs_show_archive_variation product_id="ID"]
 		 * @return void
 		 */
-		public function hooks() {
+		public function hooks(): void {
 			// Register with hook
 			add_action( 'init', array( $this, 'language' ), 1 );
 			add_action( 'init', array( $this, 'add_image_sizes' ) );
@@ -62,6 +64,15 @@ if ( ! class_exists( 'Woo_Variation_Swatches' ) ) {
 			$this->get_backend();
 			$this->get_cache();
 			$this->get_blocks();
+			$this->get_attribute_fields();
+		}
+
+		public function get_attribute_fields() {
+			return Woo_Variation_Swatches_Attribute_Fields::instance();
+		}
+
+		public function get_wc_visual(): Woo_Variation_Swatches_WC_Visual {
+			return Woo_Variation_Swatches_WC_Visual::instance();
 		}
 
 		public function get_frontend() {
@@ -249,6 +260,11 @@ if ( ! class_exists( 'Woo_Variation_Swatches' ) ) {
 
 		public function get_pro_product_id() {
 			return 113;
+		}
+
+		public static function plugin_activated() {
+			update_option( 'woocommerce_show_marketplace_suggestions', 'no' );
+			update_option( 'woo_variation_swatches_do_activate_redirect', 'yes' );
 		}
 	}
 }

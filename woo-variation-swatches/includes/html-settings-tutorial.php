@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || die( 'Keep Quit' );
 				</div>
 				<div class="tutorial-buttons">
 					<a href="https://demo.getwooplugins.com/woocommerce-variation-swatches/product-details/color-variation-swatches" target="_blank" class="button button-live-demo">Live Video Preview</a>
-					<a href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/#enable-disable-swatch-tooltip" target="_blank" class="button button-docs">Documentation</a>
+					<a href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/#how-to-enable-color-swatches" target="_blank" class="button button-docs">Documentation</a>
 				</div>
 			</div>
 		</li>
@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || die( 'Keep Quit' );
 				</div>
 				<div class="tutorial-buttons">
 					<a href="https://demo.getwooplugins.com/woocommerce-variation-swatches/product-details/image-variation-swatches" target="_blank" class="button button-live-demo">Live Video Preview</a>
-					<a href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/#enable-disable-swatch-tooltip" target="_blank" class="button button-docs">Documentation</a>
+					<a href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/#how-to-enable-image-swatches" target="_blank" class="button button-docs">Documentation</a>
 				</div>
 			</div>
 			<div class="tutorial-image-wrapper">
@@ -93,7 +93,7 @@ defined( 'ABSPATH' ) || die( 'Keep Quit' );
 				</div>
 				<div class="tutorial-buttons">
 					<a href="https://demo.getwooplugins.com/woocommerce-variation-swatches/product-details/cross-out-of-stock-variations/" target="_blank" class="button button-live-demo">Live Video Preview</a>
-					<a href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/#enable-disable-swatch-tooltip" target="_blank" class="button button-docs">Documentation</a>
+					<a href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/#hide-blur-out-of-stock-product" target="_blank" class="button button-docs">Documentation</a>
 				</div>
 			</div>
 			<div class="tutorial-image-wrapper">
@@ -313,7 +313,7 @@ defined( 'ABSPATH' ) || die( 'Keep Quit' );
 				</div>
 				<div class="tutorial-buttons">
 					<a href="https://demo.getwooplugins.com/woocommerce-variation-swatches/product-details/archive-mode/" target="_blank" class="button button-live-demo">Live Video Preview</a>
-					<a href="https://demo.getwooplugins.com/woocommerce-variation-swatches" target="_blank" class="button button-docs">Documentation</a>
+					<a href="https://getwooplugins.com/documentation/woocommerce-variation-swatches/#how-to-enable-swatches-on-archive-shop-page-premium" target="_blank" class="button button-docs">Documentation</a>
 					<?php if ( ! woo_variation_swatches()->is_pro() ) : ?>
 						<a href="<?php echo esc_url( woo_variation_swatches()->get_backend()->get_pro_link()); ?>" target="_blank" class="button button-pro">Upgrade to pro</a>
 					<?php endif; ?>

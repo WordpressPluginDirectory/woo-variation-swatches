@@ -163,7 +163,8 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Manage_Cache' ) ) {
 					'variation_images_of__%s',
 					'product_settings_of__%s',
 					'variation_attributes_of__%s',
-					'available_variations__%s'
+					'available_variations__%s',
+					'available_variations_in_rest__%s'
 				);
 
 				foreach ( $cache_keys as $key_template ) {

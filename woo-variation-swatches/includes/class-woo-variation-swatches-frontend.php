@@ -1,8 +1,14 @@
 <?php
-	defined( 'ABSPATH' ) || exit;
+
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 	class Woo_Variation_Swatches_Frontend {
+
+		public string $type_color_key           = 'product_attribute_color';
+		public string $type_image_key           = 'product_attribute_image';
+		public string $type_dual_color_key      = 'is_dual_color';
+		public string $type_secondary_color_key = 'secondary_color';
 
 		protected static $instance = null;
 
@@ -52,7 +58,10 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 				return false;
 			}
 
-			if ( 'pa_' === substr( $attribute_name, 0, 3 ) ) {
+			// 0 === strpos( $attribute_name, 'pa_' )
+			// 'pa_' === substr( $attribute_name, 0, 3 )
+
+			if ( 0 === strpos( $attribute_name, 'pa_' ) ) {
 				$attribute_name = str_replace( 'pa_', '', wc_sanitize_taxonomy_name( $attribute_name ) );
 			} else {
 				return false;
@@ -88,7 +97,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 			return apply_filters( 'woo_variation_swatches_get_wc_attribute_taxonomy_by_id', $attribute_taxonomy, $attribute_taxonomy );
 		}
 
-		public function body_class( $classes ) {
+		public function body_class( $classes ): array {
 
 			$behavior = sprintf( 'wvs-behavior-%s', sanitize_text_field( woo_variation_swatches()->get_option( 'attribute_behavior', 'blur' ) ) );
 
@@ -111,7 +120,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 			return apply_filters( 'woo_variation_swatches_dual_color_gradient_angle', '-45deg' );
 		}
 
-		public function is_color_attribute( $attribute ) {
+		public function is_color_attribute( $attribute ): bool {
 			if ( ! is_object( $attribute ) ) {
 				return false;
 			}
@@ -119,7 +128,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 			return 'color' === $attribute->attribute_type;
 		}
 
-		public function is_image_attribute( $attribute ) {
+		public function is_image_attribute( $attribute ): bool {
 			if ( ! is_object( $attribute ) ) {
 				return false;
 			}
@@ -127,7 +136,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 			return 'image' === $attribute->attribute_type;
 		}
 
-		public function is_button_attribute( $attribute ) {
+		public function is_button_attribute( $attribute ): bool {
 			if ( ! is_object( $attribute ) ) {
 				return false;
 			}
@@ -135,12 +144,26 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 			return 'button' === $attribute->attribute_type;
 		}
 
-		public function is_radio_attribute( $attribute ) {
+		public function is_radio_attribute( $attribute ): bool {
 			if ( ! is_object( $attribute ) ) {
 				return false;
 			}
 
 			return 'radio' === $attribute->attribute_type;
+		}
+
+		public function get_product_attribute_wc_visual( $term, $data = array() ): array {
+
+			$term_id = 0;
+			if ( is_numeric( $term ) ) {
+				$term_id = $term;
+			}
+
+			if ( is_object( $term ) ) {
+				$term_id = $term->term_id;
+			}
+
+			 return woo_variation_swatches()->get_wc_visual()->get_term_visual( $term_id );
 		}
 
 		public function get_product_attribute_color( $term, $data = array() ) {
@@ -154,7 +177,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 				$term_id = $term->term_id;
 			}
 
-			return get_term_meta( $term_id, 'product_attribute_color', true );
+			return get_term_meta( $term_id, $this->type_color_key, true );
 		}
 
 		public function get_product_attribute_image( $term, $data = array() ) {
@@ -168,10 +191,10 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 				$term_id = $term->term_id;
 			}
 
-			return get_term_meta( $term_id, 'product_attribute_image', true );
+			return get_term_meta( $term_id, $this->type_image_key, true );
 		}
 
-		public function get_product_children( $product ) {
+		public function get_product_children( $product ): array {
 
 			$variation_ids        = $product->get_children();
 			$available_variations = array();
@@ -200,7 +223,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 
 		}
 
-		public function get_product_variations( $product ) {
+		public function get_product_variations( $product ): array {
 
 			$variation_ids        = $product->get_children();
 			$available_variations = array();
@@ -229,12 +252,9 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 			return array_values( $available_variations );
 		}
 
-		public function get_product_attachment_props( $attachment_id = null, $product = false ) {
+		public function get_product_attachment_props( $attachment_id = null, $product = false ): array {
 
 			$props = array(
-				//'title'   => '',
-				//'caption' => '',
-				//'url'    => '',
 				'alt'    => '',
 				'src'    => '',
 				'srcset' => false,
@@ -257,44 +277,6 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Frontend' ) ) {
 			}
 
 			return $props;
-		}
-
-		/**
-		 * Get variation data.
-		 *
-		 * @depreacted Function
-		 * @return void
-		 */
-		public function get_variation_data() {
-
-			check_ajax_referer('woo_variation_swatches');
-
-			ob_start();
-
-			if ( empty( $_POST[ 'product_id' ] ) ) {
-				wp_die();
-			}
-
-			$variation = wc_get_product( absint( $_POST[ 'product_id' ] ) );
-
-			if ( ! $variation ) {
-				wp_die();
-			}
-
-
-			$variation_data = array(
-				'id'                => $variation->get_id(),
-				'is_purchasable'    => $variation->is_purchasable(),
-				'is_active'         => $variation->variation_is_active(),
-				'in_stock'          => $variation->is_in_stock(),
-				'max_qty'           => 0 < $variation->get_max_purchase_quantity() ? $variation->get_max_purchase_quantity() : '',
-				'min_qty'           => $variation->get_min_purchase_quantity(),
-				'price_html'        => $variation->get_price_html(),
-				'availability_html' => wc_get_stock_html( $variation ),
-				'image'             => $this->get_product_attachment_props( $variation->get_image_id(), $variation ),
-			);
-
-			wp_send_json( $variation_data );
 		}
 	}
 }

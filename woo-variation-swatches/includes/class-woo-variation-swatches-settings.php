@@ -76,6 +76,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 			$this->template_archive_align();
 			$this->template_attribute_behavior();
 			$this->template_enable_linkable_variation_url();
+			$this->template_enable_color_api();
 			$this->template_license();
 			$this->template_show_on_archive();
 			$this->template_archive_default_selected();
@@ -211,6 +212,12 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 			$this->modal_dialog( 'enable_linkable_variation_url', esc_html__( 'Swatches Generate Sharable URL', 'woo-variation-swatches' ), $body, $this->modal_buy_links() );
 		}
 
+		public function template_enable_color_api() {
+
+			$body = sprintf( '<video preload="auto" autoplay loop muted playsinline src="%s"></video>', esc_url( woo_variation_swatches()->org_assets_url( '/preview-21.webm' ) ) );
+			$this->modal_dialog( 'enable_color_api', esc_html__( 'Find Color Hex by Color Name', 'woo-variation-swatches' ), $body, $this->modal_support_links() );
+		}
+
 		public function template_license() {
 
 			$links = array(
@@ -296,6 +303,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 				''         => esc_html__( 'General', 'woo-variation-swatches' ),
 				'advanced' => esc_html__( 'Advanced', 'woo-variation-swatches' ),
 				'style'    => esc_html__( 'Styling', 'woo-variation-swatches' ),
+				'color_api'      => esc_html__( 'Color API', 'woo-variation-swatches' ),
 				'single'   => esc_html__( 'Product Page', 'woo-variation-swatches' ),
 				'archive'  => esc_html__( 'Archive / Shop', 'woo-variation-swatches' ),
 				'special'  => esc_html__( 'Special Attributes', 'woo-variation-swatches' ),
@@ -376,15 +384,6 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 					'default'      => 'yes',
 					'type'         => 'checkbox',
 					'help_preview' => true,
-				),
-
-				array(
-					'id'      => 'default_to_image',
-					'type'    => 'checkbox',
-					'title'   => esc_html__( 'Dropdowns to Image', 'woo-variation-swatches' ),
-					'desc'    => esc_html__( 'Convert default dropdowns to image type if variation has an image.', 'woo-variation-swatches' ),
-					'default' => 'yes',
-					'is_pro'  => true,
 				),
 
 				array(
@@ -537,7 +536,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 					'type'              => 'number',
 					'title'             => esc_html__( 'Width', 'woo-variation-swatches' ),
 					'desc'              => esc_html__( 'Single product variation item width. Default is: 30', 'woo-variation-swatches' ),
-					'css'               => 'width: 50px;',
+					'css'               => 'width: 70px;',
 					'default'           => '30',
 					'suffix'            => 'px',
 					'custom_attributes' => array(
@@ -552,7 +551,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 					'type'              => 'number',
 					'title'             => esc_html__( 'Height', 'woo-variation-swatches' ),
 					'desc'              => esc_html__( 'Single product variation item height. Default is: 30', 'woo-variation-swatches' ),
-					'css'               => 'width: 50px;',
+					'css'               => 'width: 70px;',
 					'default'           => 30,
 					'suffix'            => 'px',
 					'custom_attributes' => array(
@@ -567,7 +566,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 					'type'              => 'number',
 					'title'             => esc_html__( 'Font Size', 'woo-variation-swatches' ),
 					'desc'              => esc_html__( 'Single product variation item font size. Default is: 16', 'woo-variation-swatches' ),
-					'css'               => 'width: 50px;',
+					'css'               => 'width: 70px;',
 					'default'           => 16,
 					'suffix'            => 'px',
 					'custom_attributes' => array(
@@ -582,6 +581,37 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 					'id'   => 'single_style_options',
 				),
 
+			);
+
+			return $settings;
+		}
+
+		protected function get_settings_for_color_api_section() {
+
+			// preview-21.webm
+
+			$settings = array(
+
+				array(
+					'id'    => 'color_api_options',
+					'type'  => 'title',
+					'title' => esc_html__( 'Color API Options', 'woo-variation-swatches' ),
+					'desc'  => '',
+				),
+
+				array(
+					'id'      => 'enable_color_api',
+					'type'    => 'checkbox',
+					'title'   => esc_html__( 'Enable Color API', 'woo-variation-swatches' ),
+					'desc'    => esc_html__( 'Suggest hex values as you type a color name. Collection have 45000+ colors.', 'woo-variation-swatches' ),
+					'default' => 'no',
+					'help_preview' => true,
+				),
+
+				array(
+					'type' => 'sectionend',
+					'id'   => 'color_api_options',
+				),
 			);
 
 			return $settings;
@@ -803,6 +833,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 					'id'   => 'catalog_mode_options',
 				),
 
+				// Single Image Preview
 				array(
 					'id'    => 'single_variation_image_preview_options',
 					'type'  => 'title',
@@ -844,6 +875,28 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Settings' ) ) :
 				array(
 					'type' => 'sectionend',
 					'id'   => 'attr_large_size_options',
+				),
+
+				// Dropdowns to Image
+				array(
+					'id'    => 'default_to_image_options',
+					'type'  => 'title',
+					'title' => esc_html__( 'Dropdowns to Image', 'woo-variation-swatches' ),
+					'desc'  => esc_html__( 'Convert default dropdowns to image type if variation has an image.', 'woo-variation-swatches' ),
+				),
+
+				array(
+					'id'      => 'default_to_image',
+					'type'    => 'checkbox',
+					'title'   => esc_html__( 'Assign Image to First Attribute', 'woo-variation-swatches' ),
+					'desc'    => esc_html__( 'Show Attribute image to first attribute in product page.', 'woo-variation-swatches' ),
+					'default' => 'no',
+					'is_pro'  => true,
+				),
+
+				array(
+					'type' => 'sectionend',
+					'id'   => 'default_to_image_options',
 				),
 			);
 

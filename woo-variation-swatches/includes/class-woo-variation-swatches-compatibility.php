@@ -32,6 +32,10 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Compatibility' ) ) {
 				$this,
 				'the_7_theme_add_to_cart_compatibility'
 			), 10, 3 );
+
+
+			add_action('woo_variation_swatches_rest_get_product_variations', array( $this, 'yith_wcwtl_compatibility' ));
+
 		}
 
 		protected function init() {
@@ -69,6 +73,14 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Compatibility' ) ) {
 
 			return $available_variation;
 		}
+
+		// YITH WooCommerce Waitlist Compatibility.
+		public function yith_wcwtl_compatibility() {
+			if ( class_exists( 'YITH_WCWTL_Frontend' ) ) {
+				$object = YITH_WCWTL_Frontend::get_instance();
+				add_filter( 'woocommerce_get_stock_html', array( $object, 'output_form_3_0' ), 20, 2 );
+			}
+		}
 	}
 }
-	
+

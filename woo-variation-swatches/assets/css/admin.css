@@ -2,7 +2,7 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 11/11/2025, 3:19:45 PM
+ * Date: 9/17/2026, 7:21:24 PM
  * Released under the GPLv3 license.
  */
 .button.button-danger {
@@ -18,6 +18,48 @@
 
 [data-gwp_dependency]:not(.dependency-show) {
   display: none !important;
+}
+
+/*.term-name-wrap:has(#wvs-color-search-spinner) #tag-name,
+.term-name-wrap:has(#wvs-color-search-spinner) #name {
+	width: 90%;
+}*/
+#wvs-color-search-spinner {
+  margin-inline: -32px;
+}
+
+.term-name-wrap #name + #wvs-color-search-spinner {
+  margin-inline: 0;
+}
+
+#wvs-color-suggestions {
+  margin-block: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#wvs-color-suggestions:has(#wvs-color-suggestion-list:empty) {
+  margin: 0;
+}
+
+#wvs-color-suggestion-title {
+  color: var(--wc-destructive, #cc1818);
+  font-size: 13px;
+}
+
+#wvs-color-suggestion-list {
+  display: contents;
+}
+#wvs-color-suggestion-list > a {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 2px 3px;
+  outline: gray 1px solid;
+  /* Fallback */
+  background-color: var(--palette-color, transparent);
+  /* Modern */
 }
 
 .meta-image-field-wrapper {
@@ -51,7 +93,7 @@
 .wvs-preview {
   width: 30px;
   height: 30px;
-  border: rgba(0, 0, 0, 0.2) 1px solid;
+  outline: #858585 1px solid;
   border-radius: 2px;
 }
 

@@ -21,7 +21,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 
 			// Add form
 			add_action( "{$this->taxonomy}_add_form_fields", array( $this, 'add' ) );
-			add_action( "{$this->taxonomy}_edit_form_fields", array( $this, 'edit' ), 10 );
+			add_action( "{$this->taxonomy}_edit_form_fields", array( $this, 'edit' ), 10, 2 );
 			add_action( 'created_term', array( $this, 'save' ), 10, 3 );
 			add_action( 'edited_term', array( $this, 'save' ), 10, 3 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -154,7 +154,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			return implode( ' ', array_unique( $classes ) );
 		}
 
-		public function image_preview( $attribute_type, $term_id, $key ) {
+		public function image_preview( $attribute_type, $term_id, $key ): void {
 			if ( 'image' === $attribute_type ) {
 				$attachment_id = absint( get_term_meta( $term_id, $key, true ) );
 				$image         = wp_get_attachment_image_src( $attachment_id, 'thumbnail' );
@@ -173,12 +173,12 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 						$attributes['loading'] ='lazy';
 					}
 
-					printf( '<img %s  />', wp_kses_data(wc_implode_html_attributes($attributes) ) );
+					printf( '<img %s />', wp_kses_data(wc_implode_html_attributes($attributes) ) );
 				}
 			}
 		}
 
-		public function taxonomy_columns( $columns ) {
+		public function taxonomy_columns( $columns ): array {
 			$new_columns = array();
 
 			if ( isset( $columns['cb'] ) ) {
@@ -224,7 +224,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			return $columns;
 		}
 
-		public function delete_term( $term_id, $tt_id, $taxonomy ) {
+		public function delete_term( $term_id, $tt_id, $taxonomy ): void {
 			global $wpdb;
 
 			$term_id = absint( $term_id );
@@ -233,13 +233,13 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			}
 		}
 
-		public function enqueue_scripts() {
+		public function enqueue_scripts(): void {
 			wp_enqueue_media();
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_script( 'wp-color-picker' );
 		}
 
-		public function save( $term_id, $tt_id = '', $taxonomy = '' ) {
+		public function save( $term_id, $tt_id = '', $taxonomy = '' ): void {
 			if ( $taxonomy === $this->taxonomy ) {
 
 				if ( !isset( $_POST['woo_variation_swatches_term_meta_nonce'] ) ) {
@@ -288,8 +288,13 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			}
 		}
 
-		public function add() {
+		public function add($taxonomy): void {
 			$this->generate_fields();
+		}
+
+		public function get_taxonomy_type($taxonomy) {
+			$attribute_id = wc_attribute_taxonomy_id_by_name( $taxonomy ); // accepts 'color' too
+			return wc_get_attribute( $attribute_id )->type;
 		}
 
 		private function generate_fields( $term = false ) {
@@ -298,7 +303,9 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			$screen_taxonomy  = $screen ? $screen->taxonomy : '';
 
 			if ( ( $screen_post_type === $this->post_type ) && ( $screen_taxonomy === $this->taxonomy ) ) {
-				$this->generate_form_fields( $this->fields, $term );
+
+				$type = $this->get_taxonomy_type($this->taxonomy);
+				$this->generate_form_fields( $this->fields, $term, $type);
 			}
 		}
 
@@ -312,15 +319,16 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			 return $allowed_tags;
 		}
 
-		public function generate_form_fields( $fields, $term ) {
-			$fields = apply_filters( 'woo_variation_swatches_term_meta_fields', $fields, $term );
+		public function generate_form_fields( $fields, $term, $type ) {
+
+			$fields = apply_filters( 'woo_variation_swatches_term_meta_fields', $fields, $term, $type );
 
 			if ( empty( $fields ) ) {
 				return;
 			}
 
 			foreach ( $fields as $field ) {
-				$field = apply_filters( 'woo_variation_swatches_term_meta_field', $field, $term );
+				$field = apply_filters( 'woo_variation_swatches_term_meta_field', $field, $term, $type );
 
 				if ( empty( $field['id'] ) ) {
 					continue;
@@ -336,7 +344,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 				$field['desc']       = $field['desc'] ?? '';
 				$field['dependency'] = $field['dependency'] ?? array();
 
-				$this->field_start( $field, $term );
+				$this->field_start( $field, $term, $type );
 
 				$attributes = array(
 					'name'        => $field['id'],
@@ -401,11 +409,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 						?>
 						<div class="meta-image-field-wrapper">
 							<div class="image-preview">
-								<img
-									data-placeholder="<?php echo esc_url( $this->placeholder_img_src() ); ?>"
-									 src="<?php echo esc_url( $this->get_img_src( $field['value'] ) ); ?>"
-									 width="60px"
-									 height="60px" />
+								<img data-placeholder="<?php echo esc_url( $this->placeholder_img_src() ); ?>" src="<?php echo esc_url( $this->get_img_src( $field['value'] ) ); ?>" width="60px" height="60px"  alt=""/>
 							</div>
 							<div class="button-wrapper">
 								<input
@@ -444,17 +448,26 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 						break;
 
 					default:
-						do_action( 'woo_variation_swatches_term_meta_field', $field, $term );
+						do_action( 'woo_variation_swatches_term_meta_field', $field, $term, $type );
 						break;
 				}
 
-				$this->field_end( $field, $term );
+				$this->field_end( $field, $term, $type );
 			}
 
+			printf( '<input type="hidden" readonly id="woo_variation_swatches_taxonomy_type" value="%s" />', esc_attr( $type ) );
+
 			wp_nonce_field('woo_variation_swatches_term_meta', 'woo_variation_swatches_term_meta_nonce');
+
+			$is_color_api = wc_string_to_bool(  woo_variation_swatches()->get_option('enable_color_api', 'no') );
+
+			if ( 'color' === $type && $is_color_api ) {
+				 echo '<span id="wvs-color-search-spinner" class="spinner"></span>';
+				 echo '<div id="wvs-color-suggestions"><div id="wvs-color-suggestion-title"></div><div id="wvs-color-suggestion-list"></div></div>';
+			}
 		}
 
-		private function field_start( $field, $term ) {
+		private function field_start( $field, $term, $type ) {
 			// Example:
 			// http://emranahmed.github.io/Form-Field-Dependency/
 			/*'dependency' => array(
@@ -467,7 +480,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			);
 
 			if ( ! $term ) {
-				// Edit mode.
+				// New mode.
 				?>
 				<div <?php echo wp_kses_data($this->get_html_attributes( $attributes )); ?>
 				class="form-field <?php echo esc_attr( $field['id'] ); ?> <?php echo empty( $field['required'] ) ? '' : 'form-required'; ?>">
@@ -478,6 +491,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 				<?php
 				endif;
 			} else {
+				// Edit Mode
 				?>
 				<tr <?php echo wp_kses_data($this->get_html_attributes( $attributes )); ?>
 				class="form-field <?php echo esc_attr( $field['id'] ); ?> <?php echo empty( $field['required'] ) ? '' : 'form-required'; ?>">
@@ -505,10 +519,10 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			return woo_variation_swatches()->images_url( '/placeholder.png' );
 		}
 
-		private function field_end( $field, $term ) {
+		private function field_end( $field, $term, $type ) {
 			if ( ! $term ) {
 				?>
-				<p><?php echo wp_kses_post( $field['desc'] ); ?></p>
+				<p><?php echo wp_kses_post( $field['desc'] ); ?> </p>
 				</div>
 				<?php
 			} else {
@@ -519,7 +533,8 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Term_Meta' ) ) :
 			}
 		}
 
-		public function edit( $term ) {
+		public function edit( $term, $taxonomy ) {
+
 			$this->generate_fields( $term );
 		}
 	}

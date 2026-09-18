@@ -1,5 +1,33 @@
 *** Variation Swatches for WooCommerce ***
 
+= 2.5.0 - 17-09-2026 =
+
+* Added: WC 11.1+ compatibility.
+* Added: WooCommerce WC Visual Attribute support for Classic themes.
+* Added: Attribute label change shape style.
+
+= 2.4.0 - 19-08-2026 =
+
+* Added - WP 7.1+ compatibility.
+* Added - WC 11.0+ compatibility.
+* Added - Integrate StorePress Color Api to find color hex value from a color name.
+* Fixed - A Security issue fixed reported by - Fraudless.tech
+
+2026-06-08 - version 2.3.0
+
+* Added - WP 7.0+ compatibility.
+* Added - WC 10.8+ compatibility.
+* Added - YITH WooCommerce Waitlist compatibility.
+* Added - Filter `woo_variation_swatches_add_to_cart_variation_params` added.
+* Fixed - `woo_variation_swatches_total_children` return `{}` issue.
+
+2026-02-08 - version 2.2.3
+
+* Added - WP 6.9+ compatibility.
+* Added - WC 10.5+ compatibility.
+* Fixed - Disable Add to cart button issue.
+* Updated - Archive Stock Info positioning.
+
 2025-11-11 - version 2.2.2
 
 * Added - WC 10.3+ compatibility.

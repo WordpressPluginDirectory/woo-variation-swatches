@@ -167,40 +167,54 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 
 		public function add_to_cart_variation_params( $params, $handle ) {
 
-			if ( 'wc-add-to-cart-variation' === $handle ) {
-				if ( is_product() ) {
+			if ( 'wc-add-to-cart-variation' === $handle && is_product() ) {
 
 					$product = wc_get_product();
 
 					$params[ 'woo_variation_swatches_ajax_variation_threshold_min' ] = apply_filters( 'woocommerce_ajax_variation_threshold', 30, $product );
 					$params[ 'woo_variation_swatches_ajax_variation_threshold_max' ] = $this->get_variation_threshold_max( $product );
-					$params[ 'woo_variation_swatches_total_children' ]               = $product ?? count( $product->get_children() );
-				}
+
+					// Thanks (Saskia Teichmann)[@jyria] for your feedback and Proposed fix.
+					$params[ 'woo_variation_swatches_total_children' ] = $product ? count( $product->get_children() ) : 0;
+
 			}
 
-			return $params;
+			return apply_filters('woo_variation_swatches_add_to_cart_variation_params', $params, $product ?? null, $this );
 		}
 
 		// ajax return
 		// on add-to-cart-variation.js
 		public function get_all_variations() {
 
+			// Fixed Security reported by: Fraudless.tech (https://fraudless.tech/)
+
 			check_ajax_referer('woo_variation_swatches');
 
 			ob_start();
 
-			if ( empty( $_POST[ 'product_id' ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+			if (! isset( $_POST[ 'product_id' ])) {
 				wp_die();
 			}
 
-			$product = wc_get_product( absint( $_POST[ 'product_id' ] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+			$product_id = absint( $_POST[ 'product_id' ] ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+
+			if ( 0 === $product_id ) {
+				wp_die();
+			}
+
+			$product = wc_get_product( $product_id );
 
 			if ( ! $product ) {
 				wp_die();
 			}
 
-			$available_variations = $product->get_available_variations();
-			wp_send_json( $available_variations );
+			// Verify the product exists and its status is exactly 'publish'
+			if (  'publish' === $product->get_status() ) {
+				$available_variations = $product->get_available_variations();
+				wp_send_json( $available_variations );
+			} else {
+				wp_die();
+			}
 		}
 
 		public function enqueue_scripts() {
@@ -208,14 +222,14 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 			if ( wc_string_to_bool( woo_variation_swatches()->get_option( 'enable_stylesheet', 'yes' ) ) ) {
-				wp_enqueue_style( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/css/frontend{$suffix}.css" ), array(), woo_variation_swatches()->assets_version( "/css/frontend{$suffix}.css" ) );
+				wp_enqueue_style( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/css/frontend{$suffix}.css" ), array(), woo_variation_swatches()->version() );
 			}
 
 			$this->add_inline_style();
 
 			// $is_defer = is_wp_version_compatible( '6.3' ) ? array( 'strategy' => 'defer' ) : true;
 
-			$prefix_wc_handle = version_compare(WC()->version, '10.3', '>=') ? 'wc-':'';
+			$prefix_wc_handle      = version_compare(WC()->version, '10.3', '>=') ? 'wc-':'';
 			$jquery_blockui_handle = sprintf( '%sjquery-blockui', $prefix_wc_handle);
 
 			wp_register_script( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/js/frontend{$suffix}.js" ), array(
@@ -227,7 +241,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 				'wp-api-fetch',
 				'wp-polyfill',
 				'wp-url'
-			), woo_variation_swatches()->assets_version( "/js/frontend{$suffix}.js" ), true );
+			), woo_variation_swatches()->version(), true );
 
 			$extra_params_for_rest_uri = apply_filters( 'woo_variation_swatches_rest_add_extra_params', array() );
 
@@ -336,11 +350,18 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 			return isset( $data[ 'is_archive' ] ) && wc_string_to_bool( $data[ 'is_archive' ] );
 		}
 
-		public function wrapper_class( $args, $attribute, $product, $attribute_type ) {
+		public function wrapper_class( $args, $attribute, $product, $attribute_type ): array {
 
 			$classes = array();
 
-			$shape     = sprintf( 'wvs-style-%s', woo_variation_swatches()->get_option( 'shape_style', 'squared' ) );
+			$attribute_id = absint(  $args['taxonomy_id'] );
+
+			$global_shape_style = sanitize_text_field( woo_variation_swatches()->get_option( 'shape_style', 'squared' ));
+			$attribute_shape_style = sanitize_text_field( woo_variation_swatches()->get_attribute_fields()->get_option( $attribute_id, 'shape_style', $global_shape_style));
+
+			$shape_style = $attribute_shape_style;
+
+			$shape     = sprintf( 'wvs-style-%s', sanitize_text_field( $shape_style ) );
 			$classes[] = 'variable-items-wrapper';
 			$classes[] = sprintf( '%s-variable-items-wrapper', $attribute_type );
 			$classes[] = sanitize_text_field( $shape );
@@ -348,7 +369,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 			return $classes;
 		}
 
-		public function wrapper_html_attribute( $args, $attribute, $product, $attribute_type, $options ) {
+		public function wrapper_html_attribute( $args, $attribute, $product, $attribute_type, $options ): array {
 
 			$raw_html_attributes = array();
 			$css_classes         = $this->wrapper_class( $args, $attribute, $product, $attribute_type );
@@ -373,19 +394,19 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 			return '</ul>';
 		}
 
-		public function item_start( $data, $attribute_type, $variation_data = array() ) {
+		public function item_start( $data, $attribute_type, $variation_data = array() ): string {
 
 			$args           = $data[ 'args' ];
 			$term_or_option = $data[ 'item' ];
 
-			$options     = $args[ 'options' ];
-			$product     = $args[ 'product' ];
-			$attribute   = $args[ 'attribute' ];
+			$options        = $args[ 'options' ];
+			$product        = $args[ 'product' ];
+			$attribute      = $args[ 'attribute' ];
 			$attribute_name = $data[ 'attribute_name' ];
-			$is_selected = $data[ 'is_selected' ];
-			$option_name = $data[ 'option_name' ];
-			$option_slug = $data[ 'option_slug' ];
-			$slug        = $data[ 'slug' ];
+			$is_selected    = $data[ 'is_selected' ];
+			$option_name    = $data[ 'option_name' ];
+			$option_slug    = $data[ 'option_slug' ];
+			$slug           = $data[ 'slug' ];
 
 			$is_term = wc_string_to_bool( $data[ 'is_term' ] );
 
@@ -505,7 +526,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 						continue;
 					}
 
-					if ( ! $variation->get_image_id( 'edit' ) > 0 && ! $default_to_image_from_parent ) {
+					if ( ! ( $variation->get_image_id( 'edit' ) > 0 ) && ! $default_to_image_from_parent ) {
 						continue;
 					}
 
@@ -574,10 +595,11 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 				$attachment_id = apply_filters( 'woo_variation_swatches_global_product_attribute_image_id', absint( woo_variation_swatches()->get_frontend()->get_product_attribute_image( $term, $data ) ), $data );
 				$image_size    = apply_filters( 'woo_variation_swatches_global_product_attribute_image_size', sanitize_text_field( woo_variation_swatches()->get_option( 'attribute_image_size', 'variation_swatches_image_size' ) ), $data );
 
-				if ( empty( $attachment_id ) && 1 === $data[ 'total_attributes' ] && $data[ 'variation_image_id' ] > 0 ) {
-					$attachment_id = $data[ 'variation_image_id' ];
+				if ( empty( $attachment_id ) && 1 === $data[ 'total_attributes' ] && absint($data[ 'variation_image_id' ]) > 0 ) {
+					$attachment_id = absint( $data[ 'variation_image_id' ]);
 				}
 
+				// @TODO: Use wp_get_attachment_image_url
 				return wp_get_attachment_image_src( $attachment_id, $image_size );
 			}
 		}
@@ -595,6 +617,41 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 
 				return sprintf( $template_format, esc_attr( $color ) );
 			}
+		}
+
+		public function wc_visual_attribute( $data, $attribute_type, $variation_data = array() ): string {
+			// Color
+			if ( 'wc-visual' === $attribute_type ) {
+
+				$term = $data[ 'item' ];
+
+				$wc_visual = woo_variation_swatches()->get_frontend()->get_product_attribute_wc_visual($term, $data);
+
+				$option_name = $data[ 'option_name' ];
+
+				if( 'none' === $wc_visual['type'] ){
+					$template_format =  '<span class="variable-item-span variable-item-span-button">%s</span>';
+
+					return sprintf( $template_format, esc_attr( $option_name ), );
+				}
+
+
+				if( 'color' === $wc_visual['type'] ) {
+
+					$template_format =  '<span class="variable-item-span variable-item-span-color" style="background-color:%s;"></span>';
+
+					return sprintf( $template_format, esc_attr( $wc_visual['value'] ) );
+				}
+
+				if( 'image' === $wc_visual['type'] ) {
+
+					$template_format = '<img class="variable-item-image" aria-hidden="true" alt="%s" src="%s" width="%d" height="%d" />';
+
+					return sprintf( $template_format, esc_attr( $option_name ), esc_url( $wc_visual['value'] ), esc_attr( $wc_visual['attrs']['width'] ), esc_attr( $wc_visual['attrs']['height'] ) );
+				}
+			}
+
+			return '';
 		}
 
 		public function image_attribute( $data, $attribute_type, $variation_data = array() ) {
@@ -825,6 +882,7 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 				'product'          => false,
 				'selected'         => false,
 				'name'             => '',
+				'aria-label'       => false,
 				'id'               => '',
 				'class'            => '',
 				'show_option_none' => esc_html__( 'Choose an option', 'woo-variation-swatches' ),
@@ -848,12 +906,11 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 			$options          = $args[ 'options' ];
 			$product          = $args[ 'product' ];
 			$attribute        = $args[ 'attribute' ];
-			$name             = $args[ 'name' ] ? $args[ 'name' ] : wc_variation_attribute_name( $attribute );
-			$id               = $args[ 'id' ] ? $args[ 'id' ] : sanitize_title( $attribute );
+			$name             = $args[ 'name' ] ?: wc_variation_attribute_name( $attribute );
+			$id               = $args[ 'id' ] ?: sanitize_title( $attribute );
 			$class            = $args[ 'class' ];
 			$show_option_none = (bool) $args[ 'show_option_none' ];
-			// $show_option_none      = true;
-			$show_option_none_text = $args[ 'show_option_none' ] ? $args[ 'show_option_none' ] : esc_html__( 'Choose an option', 'woo-variation-swatches' ); // We'll do our best to hide the placeholder, but we'll need to show something when resetting options.
+			$show_option_none_text = $args[ 'show_option_none' ] ?: esc_html__( 'Choose an option', 'woo-variation-swatches' ); // We'll do our best to hide the placeholder, but we'll need to show something when resetting options.
 
 			if ( empty( $options ) && ! empty( $product ) && ! empty( $attribute ) ) {
 				$attributes = $product->get_variation_attributes();
@@ -868,6 +925,9 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 			$attribute_type           = ( $get_attribute ) ? $get_attribute->attribute_type : 'select';
 			$swatches_data            = array();
 
+			$args[ 'is_taxonomy' ] = taxonomy_exists( $attribute );
+			$args[ 'taxonomy_id' ] = taxonomy_exists( $attribute ) ? $get_attribute->attribute_id : 0;
+
 			if ( ! in_array( $attribute_type, $attribute_types, true ) ) {
 				return $html;
 			}
@@ -879,15 +939,17 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 			}
 
 			if ( 'select' !== $attribute_type ) {
-				$select_inline_style = 'style="display:none"';
+				$select_inline_style = 'style="display:none" ';
 				$class              .= ' woo-variation-raw-select';
 			}
 
-			$html  = '<select ' . $select_inline_style . ' id="' . esc_attr( $id ) . '" class="' . esc_attr( $class ) . '" name="' . esc_attr( $name ) . '" data-attribute_name="' . esc_attr( wc_variation_attribute_name( $attribute ) ) . '" data-show_option_none="' . ( $show_option_none ? 'yes' : 'no' ) . '">';
+			$aria_label_attribute = ( $args['aria-label'] ? ' aria-label="' . esc_attr( $args['aria-label'] ) . '"' : '' );
+
+			$html  = '<select ' . $select_inline_style . $aria_label_attribute. ' id="' . esc_attr( $id ) . '" class="' . esc_attr( $class ) . '" name="' . esc_attr( $name ) . '" data-attribute_name="' . esc_attr( wc_variation_attribute_name( $attribute ) ) . '" data-show_option_none="' . ( $show_option_none ? 'yes' : 'no' ) . '">';
 			$html .= '<option value="">' . esc_html( $show_option_none_text ) . '</option>';
 
 			if ( ! empty( $options ) ) {
-				if ( $product && taxonomy_exists( $attribute ) ) {
+				if ( taxonomy_exists( $attribute ) ) {
 					// Get terms if this is a taxonomy - ordered. We need the names too.
 					$terms = wc_get_product_terms( $product->get_id(), $attribute, array(
 						'fields' => 'all',
@@ -945,8 +1007,12 @@ if ( ! class_exists( 'Woo_Variation_Swatches_Product_Page' ) ) {
 						continue;
 					}
 
+
+					// @TODO: Add wc-visual
+
 					$item .= $this->item_start( $data, $attribute_type );
 
+					$item .= $this->wc_visual_attribute( $data, $attribute_type );
 					$item .= $this->color_attribute( $data, $attribute_type );
 					$item .= $this->image_attribute( $data, $attribute_type );
 					$item .= $this->button_attribute( $data, $attribute_type );

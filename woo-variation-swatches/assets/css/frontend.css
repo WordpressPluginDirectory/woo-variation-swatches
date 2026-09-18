@@ -2,7 +2,7 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 11/11/2025, 3:19:45 PM
+ * Date: 9/17/2026, 7:21:24 PM
  * Released under the GPLv3 license.
  */
 .woo-variation-swatches.wvs-tooltip {
@@ -441,6 +441,14 @@
 .woo-variation-swatches .wp-block-getwooplugins-variation-swatches.swatches-align-right {
   --wvs-position: flex-end;
 }
+.woo-variation-swatches .wp-block-getwooplugins-variation-swatches .wvs-archive-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: var(--wvs-position);
+      -ms-flex-pack: var(--wvs-position);
+          justify-content: var(--wvs-position);
+}
 .woo-variation-swatches .woo-variation-raw-select + .select2 {
   display: none !important;
 }
@@ -540,6 +548,14 @@
 }
 .woo-variation-swatches .wvs-archive-variations-wrapper .variable-items-wrapper.wvs-style-squared.archive-variable-items .variable-item:not(.radio-variable-item).button-variable-item {
   min-width: var(--wvs-archive-product-item-width, 30px);
+}
+.woo-variation-swatches .wvs-archive-variations-wrapper .wvs-archive-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: var(--wvs-position);
+      -ms-flex-pack: var(--wvs-position);
+          justify-content: var(--wvs-position);
 }
 .woo-variation-swatches ul.variations {
   list-style: none;
@@ -806,7 +822,7 @@
   height: 100%;
   width: 100%;
 }
-.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item.selected:not(.no-stock) .variable-item-contents::before, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).image-variable-item.selected:not(.no-stock) .variable-item-contents::before {
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item.selected:not(.no-stock) .variable-item-contents::before, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).image-variable-item.selected:not(.no-stock) .variable-item-contents::before, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).wc-visual-variable-item:not(:has(.variable-item-span-button)).selected:not(.no-stock) .variable-item-contents::before {
   position: absolute;
   content: " ";
   display: block;
@@ -817,17 +833,17 @@
   height: 100%;
   width: 100%;
 }
-.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item .variable-item-span-color, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).image-variable-item .variable-item-span-color {
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item .variable-item-span-color, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).image-variable-item .variable-item-span-color, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).wc-visual-variable-item:not(:has(.variable-item-span-button)) .variable-item-span-color {
   width: 100%;
   height: 100%;
   /*position: relative;*/
   display: block;
 }
-.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).button-variable-item {
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).button-variable-item, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).wc-visual-variable-item:has(.variable-item-span-button) {
   text-align: center;
   font-size: var(--wvs-single-product-item-font-size, 16px);
 }
-.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).button-variable-item.selected:not(.no-stock) {
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).button-variable-item.selected:not(.no-stock), .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).wc-visual-variable-item:has(.variable-item-span-button).selected:not(.no-stock) {
   background-color: var(--wvs-selected-item-background-color, #FFFFFF);
   color: var(--wvs-selected-item-text-color, #000000);
 }
@@ -882,9 +898,6 @@
   line-height: 1;
   margin: 0;
 }
-.woo-variation-swatches .wvs-style-rounded.variable-items-wrapper .variable-item.radio-variable-item {
-  /*border-radius: 2px;*/
-}
 .woo-variation-swatches .wvs-style-rounded.variable-items-wrapper .variable-item.radio-variable-item img {
   border-radius: 100%;
 }
@@ -901,11 +914,15 @@
 .woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item span::after {
   border-radius: 0;
 }
-.woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item.radio-variable-item {
-  /*border-radius: 2px;*/
-}
 .woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item.radio-variable-item img {
   border-radius: 5px;
+}
+.woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item.wc-visual-variable-item:has(.variable-item-span-button) {
+  width: auto;
+  min-width: var(--wvs-single-product-item-width);
+}
+.woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item.wc-visual-variable-item:has(.variable-item-span-button) .variable-item-span {
+  padding: 0 5px;
 }
 .woo-variation-swatches.wvs-behavior-blur .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled .variable-item-contents::before, .woo-variation-swatches.wvs-behavior-blur .variable-items-wrapper .variable-item:not(.radio-variable-item).disabled:hover .variable-item-contents::before {
   /*background: none;*/

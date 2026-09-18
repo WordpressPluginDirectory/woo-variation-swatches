@@ -82,9 +82,10 @@
 	text-shadow: 1px 1px 1px #EEEEEE;
 }
 
-.gwp-setting-input-suffix {
-	/*margin: 4px;*/
-	display: inline-block;
+.gwp-setting-input-suffix, .gwp-setting-input-prefix {
+	align-self: stretch;
+	display: flex;
+	align-items: center;
 }
 
 .getwooplugins-admin-form-table {
@@ -339,7 +340,6 @@ h2 .getwooplugins-help-tip {
 	background-color: #DCDCDE;
 	color: #2C3338;
 	padding: 0 8px;
-	line-height: 2;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -359,7 +359,6 @@ h2 .getwooplugins-help-tip {
 	background-color: #DCDCDE;
 	color: #2C3338;
 	padding: 0 8px;
-	line-height: 2;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
